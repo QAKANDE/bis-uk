@@ -1,0 +1,24 @@
+/*!
+ * Project_Name: Beauty Salon Template
+ * Author: Themezy
+ * Email: info@themezy.com
+ * URL: http://themezy.com
+ */
+
+
+/*=========================================== 
+ * Importing CSS Libraries
+ *===========================================*/
+
+@import "src\sass\libs\_settings.scss",
+"src\sass\libs\_mixins.scss",
+"src\sass\libs\_normalize.scss",
+"src\sass\libs\_global.scss",
+"src\sass\libs\_components.scss",
+"src\sass\libs\_lightbox.scss", // importing bootstrap grid framework
+"src\sass\libs\bootstrap-grid\_settings.scss",
+"src\sass\libs\bootstrap-grid\_mixins.scss",
+"src\sass\libs\bootstrap-grid\_grid.scss", // importing layout styles
+"src\sass\layout\_header.scss",
+"src\sass\layout\_content.scss",
+"src\sass\layout\_footer.scss";
