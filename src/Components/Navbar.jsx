@@ -1,51 +1,60 @@
-import React, { Component } from "react";
-import logo from "../Assets/Images/logo.png";
-
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import '../css/Navbar.css';
 
 class Navbar extends Component {
-  state = {};
-  render() {
-    return (
-      <>
-        <header className="site-header">
-          <div className="container">
-            <a id="branding" href="index.html">
-              <img src={logo} alt="Company name" className="logo" />
-              <div className="logo-copy">
-                <h1 className="site-title">Company Name</h1>
-                <small className="site-description">Slogan goes here</small>
-              </div>
-            </a>
-
-            <div className="main-navigation">
-              <button type="button" className="menu-toggle">
-                <i className="fa fa-bars"></i>
-              </button>
-              <ul className="menu">
-                <li className="menu-item current-menu-item">
-                  <a href="#">Home</a>
-                </li>
-                <li className="menu-item">
-                  <a href="about.html">About</a>
-                </li>
-                <li className="menu-item">
-                  <a href="service.html">Services</a>
-                </li>
-                <li className="menu-item">
-                  <a href="gallery.html">Gallery</a>
-                </li>
-                <li className="menu-item">
-                  <a href="contact.html">Contact</a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="mobile-navigation"></div>
-          </div>
-        </header>
-      </>
-    );
-  }
+	state = {};
+	render() {
+		return (
+			<div className="header-middle">
+				<div className="container">
+					<div className="row">
+						<div className="col-md-4 clearfix">
+							<div className="logo pull-left">logo</div>
+						</div>
+						<div className="col-md-8 clearfix">
+							<div className="d-flex flex-row shop-menu clearfix pull-right">
+								<ul>
+									<li>
+										<Link to="/">Home</Link>
+									</li>
+									<li>
+										<Link to="/portfolio">Portfolio</Link>
+									</li>
+									<li>
+										<Link to="bookus">Book us</Link>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+		// <div className="header_top">
+		// 	<div className="container">
+		// 		<div className="row">
+		// 			<div className="col-sm-6">
+		// 				<Link to="/">
+		// 					<img
+		// 						src="https://johnpaulstephen.com/wp-content/uploads/2020/05/johnPaulStephenLOGOhead-1.png"
+		// 						style={{ width: '12%' }}
+		// 					/>
+		// 				</Link>
+		// 			</div>
+		// 			<div className="col-sm-6">
+		// 				<div className="d-flex justidy-content-between social-icons pull-right">
+		// 					<ul>
+		// 						<li>HOME</li>
+		// 						<li>PORTFOLIO</li>
+		// 						<li>BOOK US</li>
+		// 					</ul>
+		// 				</div>
+		// 			</div>
+		// 		</div>
+		// 	</div>
+		// </div>
+	}
 }
 
 export default Navbar;
