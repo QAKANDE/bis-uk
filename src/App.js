@@ -1,34 +1,34 @@
-import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Navbar from './Components/Navbar';
-import Home from './Components/Home';
-import Portfolio from './Components/Portfolio';
-import BookUs from './Components/BookUs';
+import './App.css'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Navbar from './Components/Navbar'
+import Home from './Components/Home'
+import BookUs from './Components/BookUs'
+import Portfolio from './Components/Portfolio'
+import Footer from './Components/Footer'
 
 function App() {
     return ( <
-        div className = "App" > { ' ' } { ' ' } <
-        div className = "homepage header-collapse" > { ' ' } { ' ' } <
-        div id = "site-content" > { ' ' } { ' ' } <
+        div className = "App" > { ' ' } <
+        div className = "homepage header-collapse" > { ' ' } <
+        div id = "site-content" > { ' ' } <
         Router >
         <
         Navbar / >
         <
         Route path = "/"
         exact component = { Home }
-        /> <Route path="/
-        " exact component={Home} /> {' '} <
-        Route path = " / portfolio "
+        />{' '} <
+        Route path = "/portfolio"
         exact component = { Portfolio }
-        /> {' '} <
-        Route path = " / bookus "
+        />{' '} <
+        Route path = "/bookus"
         exact component = { BookUs }
-        />  {' '} <
-        /Router>{' '} { ' ' } <
-        /div>{' '} { ' ' } <
-        /div>{' '} { ' ' } <
+        /> <Footer / > { ' ' } <
+        /Router>{' '} <
+        /div>{' '} <
+        /div>{' '} <
         /div>
-    );
+    )
 }
 
-export default App;
+export default App

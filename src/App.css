@@ -28,13 +28,6 @@ template {
     display: none;
 }
 
-.App {
-    background-color: #fff;
-    color: #000;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-}
-
 .App,
 button,
 input,
@@ -89,6 +82,10 @@ h6 {
     margin: 2.33em 0;
 }
 
+ul li {
+    list-style: none;
+}
+
 abbr[title] {
     border-bottom: 1px dotted;
 }
@@ -122,7 +119,7 @@ pre {
 }
 
 q {
-    quotes: "\201C" "\201D" "\2018" "\2019";
+    quotes: '\201C''\201D''\2018''\2019';
 }
 
 q:before,
@@ -196,9 +193,9 @@ select {
 }
 
 button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
     -webkit-appearance: button;
     cursor: pointer;
 }
@@ -208,21 +205,21 @@ input[disabled] {
     cursor: default;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0;
 }
 
-input[type="search"] {
+input[type='search'] {
     -webkit-appearance: textfield;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
 }
 
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
     -webkit-appearance: none;
 }
 
@@ -252,7 +249,7 @@ table {
 .App {
     background-color: #151215;
     color: #aea9ad;
-    font-family: Arial, "Open Sans", serif;
+    font-family: Arial, 'Open Sans', serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
@@ -270,7 +267,7 @@ p {
     text-align: center;
 }
 
-form input:not([type="submit"]),
+form input:not([type='submit']),
 form textarea {
     padding: 20px 20px;
     background: none;
@@ -293,7 +290,7 @@ form textarea {
 }
 
 .hero-slider .slides:after {
-    content: " ";
+    content: ' ';
     clear: both;
     display: block;
     overflow: hidden;
@@ -316,7 +313,7 @@ form textarea {
     color: white;
     text-transform: uppercase;
     font-weight: 300;
-    font-family: "Novecento Sans", "Open Sans", sans-serif;
+    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
     margin: 0;
     line-height: 1;
 }
@@ -326,7 +323,7 @@ form textarea {
     font-size: 90px;
     font-size: 5.625rem;
     font-weight: 300;
-    font-family: "Novecento Sans", "Open Sans", sans-serif;
+    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
     text-transform: uppercase;
     margin: 0 0 30px;
     line-height: 1;
@@ -368,15 +365,15 @@ form textarea {
     border: 2px solid white;
     overflow: hidden;
     text-indent: -9999px;
-    -webkit-transition: .3s ease;
-    transition: .3s ease;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
     cursor: pointer;
 }
 
 .hero-slider .flex-control-paging li a.flex-active {
     border: none;
     background-repeat: no-repeat;
-    background-image: url("C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\paging.png");
+    background-image: url('C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\paging.png');
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5),
@@ -384,7 +381,7 @@ all and (-o-min-device-pixel-ratio: 3 / 2),
 all and (min--moz-device-pixel-ratio: 1.5),
 all and (min-device-pixel-ratio: 1.5) {
     .hero-slider .flex-control-paging li a.flex-active {
-        background-image: url("C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\paging@2x.png");
+        background-image: url('C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\paging@2x.png');
         background-size: 15px 15px;
     }
 }
@@ -406,7 +403,7 @@ all and (min-device-pixel-ratio: 1.5) {
     color: #787377;
     margin: 0 0 50px;
     font-weight: 300;
-    font-family: "Novecento Sans", "Open Sans", sans-serif;
+    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
 }
 
 .button {
@@ -420,8 +417,8 @@ all and (min-device-pixel-ratio: 1.5) {
     font-size: 12px;
     font-size: 0.75rem;
     text-transform: uppercase;
-    -webkit-transition: .3s ease;
-    transition: .3s ease;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .button:hover {
@@ -474,7 +471,7 @@ all and (min-device-pixel-ratio: 1.5) {
     font-size: 1.875rem;
     text-transform: uppercase;
     font-weight: 300;
-    font-family: "Novecento Sans", "Open Sans", sans-serif;
+    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
     background-image: -webkit-linear-gradient(90deg, #cc7250, #f7d0c2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -490,7 +487,7 @@ all and (min-device-pixel-ratio: 1.5) {
 }
 
 .news:after {
-    content: " ";
+    content: ' ';
     clear: both;
     display: block;
     overflow: hidden;
@@ -510,7 +507,7 @@ all and (min-device-pixel-ratio: 1.5) {
     font-size: 3.75rem;
     line-height: 1;
     font-weight: 300;
-    font-family: "Novecento Sans", "Open Sans", sans-serif;
+    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
     background-image: -webkit-linear-gradient(90deg, #cc7250, #f7d0c2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -518,7 +515,7 @@ all and (min-device-pixel-ratio: 1.5) {
 
 .news .entry-date .monthyear {
     color: #837e82;
-    font-family: "Novecento Sans", "Open Sans", sans-serif;
+    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
     font-weight: 300;
     font-size: 18px;
     font-size: 1.125rem;
@@ -549,14 +546,14 @@ all and (min-device-pixel-ratio: 1.5) {
     margin: 0 10px;
     color: #dfdfdf;
     text-transform: uppercase;
-    font-family: "Novecento Sans", "Open Sans", sans-serif;
+    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
     position: relative;
     font-size: 12px;
     font-size: 0.75rem;
 }
 
 .filterable-nav a:after {
-    content: " ";
+    content: ' ';
     width: 100%;
     height: 2px;
     position: absolute;
@@ -565,8 +562,8 @@ all and (min-device-pixel-ratio: 1.5) {
     background-color: #cc7250;
     background-image: -webkit-linear-gradient(90deg, #cc7250, #f7d0c2);
     opacity: 0;
-    -webkit-transition: .3s ease;
-    transition: .3s ease;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .filterable-nav a.current:after,
@@ -580,8 +577,8 @@ all and (min-device-pixel-ratio: 1.5) {
 .filterable-items .filterable-item {
     -webkit-transition-property: -webkit-transform, opacity;
     transition-property: transform, opacity;
-    -webkit-transition-duration: .3s;
-    transition-duration: .3s;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
 }
 
 .filterable-items {
@@ -632,7 +629,7 @@ all and (min-device-pixel-ratio: 1.5) {
 }
 
 .gallery-item figure figcaption:after {
-    content: " ";
+    content: ' ';
     right: 0;
     height: 2px;
     background-color: #cc7250;
@@ -647,7 +644,7 @@ all and (min-device-pixel-ratio: 1.5) {
     margin: 0;
     font-size: 14px;
     font-size: 0.875rem;
-    font-family: "Novecento Sans", "Open Sans", sans-serif;
+    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
     text-transform: uppercase;
     color: white;
     font-weight: 400;
@@ -665,14 +662,14 @@ all and (min-device-pixel-ratio: 1.5) {
 }
 
 .contact-form:after {
-    content: " ";
+    content: ' ';
     clear: both;
     display: block;
     overflow: hidden;
     height: 0;
 }
 
-.contact-form input:not([type="submit"]),
+.contact-form input:not([type='submit']),
 .contact-form textarea {
     background-repeat: no-repeat !important;
     background-position: 10px center;
@@ -681,13 +678,13 @@ all and (min-device-pixel-ratio: 1.5) {
     margin-bottom: 10px;
     color: white;
     outline: none;
-    -webkit-transition: .3s ease;
-    transition: .3s ease;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
 }
 
-.contact-form input:not([type="submit"]):hover,
-.contact-form input:not([type="submit"]):active,
-.contact-form input:not([type="submit"]):focus,
+.contact-form input:not([type='submit']):hover,
+.contact-form input:not([type='submit']):active,
+.contact-form input:not([type='submit']):focus,
 .contact-form textarea:hover,
 .contact-form textarea:active,
 .contact-form textarea:focus {
@@ -699,7 +696,7 @@ all and (min-device-pixel-ratio: 1.5) {
 }
 
 .contact-form #name {
-    background-image: url("C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\icon-contact-user.png");
+    background-image: url('C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\icon-contact-user.png');
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5),
@@ -707,13 +704,13 @@ all and (-o-min-device-pixel-ratio: 3 / 2),
 all and (min--moz-device-pixel-ratio: 1.5),
 all and (min-device-pixel-ratio: 1.5) {
     .contact-form #name {
-        background-image: url("C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\icon-contact-user@2x.png");
+        background-image: url('C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\icon-contact-user@2x.png');
         background-size: 16px 18px;
     }
 }
 
 .contact-form #email {
-    background-image: url("C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\icon-contact-envelope.png");
+    background-image: url('C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\icon-contact-envelope.png');
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5),
@@ -721,13 +718,13 @@ all and (-o-min-device-pixel-ratio: 3 / 2),
 all and (min--moz-device-pixel-ratio: 1.5),
 all and (min-device-pixel-ratio: 1.5) {
     .contact-form #email {
-        background-image: url("C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\icon-contact-envelope@2x.png");
+        background-image: url('C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\icon-contact-envelope@2x.png');
         background-size: 16px 11px;
     }
 }
 
 .contact-form #website {
-    background-image: url("C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\icon-contact-globe.png");
+    background-image: url('C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\icon-contact-globe.png');
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5),
@@ -735,13 +732,13 @@ all and (-o-min-device-pixel-ratio: 3 / 2),
 all and (min--moz-device-pixel-ratio: 1.5),
 all and (min-device-pixel-ratio: 1.5) {
     .contact-form #website {
-        background-image: url("C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\icon-contact-globe@2x.png");
+        background-image: url('C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\icon-contact-globe@2x.png');
         background-size: 16px 16px;
     }
 }
 
 .contact-form #message {
-    background-image: url("C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\icon-contact-pencil.png");
+    background-image: url('C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\icon-contact-pencil.png');
     min-height: 200px;
 }
 
@@ -750,7 +747,7 @@ all and (-o-min-device-pixel-ratio: 3 / 2),
 all and (min--moz-device-pixel-ratio: 1.5),
 all and (min-device-pixel-ratio: 1.5) {
     .contact-form #message {
-        background-image: url("C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\icon-contact-pencil@2x.png");
+        background-image: url('C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\icon-contact-pencil@2x.png');
         background-size: 16px 17px;
     }
 }
@@ -773,7 +770,7 @@ all and (min-device-pixel-ratio: 1.5) {
 }
 
 .address-info:after {
-    content: " ";
+    content: ' ';
     width: 100%;
     height: 2px;
     background-image: -webkit-linear-gradient(90deg, #cc7250, #f7d0c2);
@@ -827,30 +824,30 @@ all and (min-device-pixel-ratio: 1.5) {
     position: relative;
 }
 
-.subscribe-form input:not([type="submit"]) {
+.subscribe-form input:not([type='submit']) {
     width: 100%;
     border: 2px solid #3a353a;
     padding: 15px 20px;
     background: transparent;
     color: white;
     outline: none;
-    -webkit-transition: .3s ease;
-    transition: .3s ease;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
 }
 
-.subscribe-form input:not([type="submit"]):active,
-.subscribe-form input:not([type="submit"]):hover,
-.subscribe-form input:not([type="submit"]):focus {
+.subscribe-form input:not([type='submit']):active,
+.subscribe-form input:not([type='submit']):hover,
+.subscribe-form input:not([type='submit']):focus {
     border-color: #cc7250;
 }
 
-.subscribe-form input[type="email"]:active+input[type="submit"],
-.subscribe-form input[type="email"]:hover+input[type="submit"],
-.subscribe-form input[type="email"]:focus+input[type="submit"] {
+.subscribe-form input[type='email']:active+input[type='submit'],
+.subscribe-form input[type='email']:hover+input[type='submit'],
+.subscribe-form input[type='email']:focus+input[type='submit'] {
     border-color: #cc7250;
 }
 
-.subscribe-form input[type="submit"] {
+.subscribe-form input[type='submit'] {
     position: absolute;
     right: 0;
     top: 0;
@@ -863,9 +860,9 @@ all and (min-device-pixel-ratio: 1.5) {
     outline: none;
     font-size: 12px;
     font-size: 0.75rem;
-    font-family: "Novecento Sans", "Open Sans", sans-serif;
-    -webkit-transition: .3s ease;
-    transition: .3s ease;
+    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .prices {
@@ -876,7 +873,7 @@ all and (min-device-pixel-ratio: 1.5) {
 .prices li {
     padding: 15px 0;
     border-bottom: 1px solid #3a353a;
-    font-family: "Novecento Sans", "Open Sans", sans-serif;
+    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
     text-transform: uppercase;
     font-size: 14px;
     font-size: 0.875rem;
@@ -946,13 +943,13 @@ all and (min-device-pixel-ratio: 1.5) {
     height: 1.25em;
     /* 20 */
     background-color: #fff;
-    -webkit-animation: imagelightbox-loading .5s ease infinite;
-    animation: imagelightbox-loading .5s ease infinite;
+    -webkit-animation: imagelightbox-loading 0.5s ease infinite;
+    animation: imagelightbox-loading 0.5s ease infinite;
 }
 
 @-webkit-keyframes imagelightbox-loading {
     from {
-        opacity: .5;
+        opacity: 0.5;
         -webkit-transform: scale(0.75);
     }
     50% {
@@ -960,14 +957,14 @@ all and (min-device-pixel-ratio: 1.5) {
         -webkit-transform: scale(1);
     }
     to {
-        opacity: .5;
+        opacity: 0.5;
         -webkit-transform: scale(0.75);
     }
 }
 
 @keyframes imagelightbox-loading {
     from {
-        opacity: .5;
+        opacity: 0.5;
         -webkit-transform: scale(0.75);
         transform: scale(0.75);
     }
@@ -977,7 +974,7 @@ all and (min-device-pixel-ratio: 1.5) {
         transform: scale(1);
     }
     to {
-        opacity: .5;
+        opacity: 0.5;
         -webkit-transform: scale(0.75);
         transform: scale(0.75);
     }
@@ -1015,8 +1012,8 @@ all and (min-device-pixel-ratio: 1.5) {
     /* 40 */
     right: 2.5em;
     /* 40 */
-    -webkit-transition: color .3s ease;
-    transition: color .3s ease;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 #imagelightbox-close:hover,
@@ -1170,8 +1167,8 @@ all and (min-device-pixel-ratio: 1.5) {
 #imagelightbox-caption,
 #imagelightbox-nav,
 .imagelightbox-arrow {
-    -webkit-animation: fade-in .25s linear;
-    animation: fade-in .25s linear;
+    -webkit-animation: fade-in 0.25s linear;
+    animation: fade-in 0.25s linear;
 }
 
 @-webkit-keyframes fade-in {
@@ -1242,7 +1239,7 @@ all and (min-device-pixel-ratio: 1.5) {
 }
 
 .container:after {
-    content: " ";
+    content: ' ';
     clear: both;
     display: block;
     overflow: hidden;
@@ -1276,7 +1273,7 @@ all and (min-device-pixel-ratio: 1.5) {
 }
 
 .container-fluid:after {
-    content: " ";
+    content: ' ';
     clear: both;
     display: block;
     overflow: hidden;
@@ -1290,7 +1287,7 @@ all and (min-device-pixel-ratio: 1.5) {
 }
 
 .row:after {
-    content: " ";
+    content: ' ';
     clear: both;
     display: block;
     overflow: hidden;
@@ -2331,7 +2328,7 @@ all and (min-device-pixel-ratio: 1.5) {
 }
 
 .site-header:after {
-    content: " ";
+    content: ' ';
     clear: both;
     display: block;
     overflow: hidden;
@@ -2345,7 +2342,7 @@ all and (min-device-pixel-ratio: 1.5) {
 }
 
 .site-header .container:after {
-    content: " ";
+    content: ' ';
     clear: both;
     display: block;
     overflow: hidden;
@@ -2377,7 +2374,7 @@ all and (min-device-pixel-ratio: 1.5) {
     color: white;
     font-size: 14px;
     font-size: 0.875rem;
-    font-family: "Novecento Sans", "Open Sans", sans-serif;
+    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
     text-transform: uppercase;
     margin: 0;
     line-height: 1;
@@ -2452,7 +2449,7 @@ all and (min-device-pixel-ratio: 1.5) {
 }
 
 .main-navigation .menu-item a:after {
-    content: " ";
+    content: ' ';
     height: 2px;
     width: 100%;
     position: absolute;
@@ -2461,8 +2458,8 @@ all and (min-device-pixel-ratio: 1.5) {
     background-color: #cc7250;
     background: -webkit-linear-gradient(90deg, #cc7250, #f7d0c2);
     opacity: 0;
-    -webkit-transition: .3s ease;
-    transition: .3s ease;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .main-navigation .menu-item.current-menu-item a:after,
@@ -2497,7 +2494,7 @@ all and (min-device-pixel-ratio: 1.5) {
 .mobile-navigation .menu-item a {
     display: block;
     padding: 20px;
-    font-family: "Novecento Sans", "Open Sans", sans-serif;
+    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
     text-transform: uppercase;
     font-size: 12px;
     font-size: 0.75rem;
@@ -2563,7 +2560,7 @@ img {
 }
 
 .widget .widget-title {
-    font-family: "Novecento Sans", "Open Sans", sans-serif;
+    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
     text-transform: uppercase;
     color: white;
     font-weight: 600;
@@ -2662,6 +2659,46 @@ img {
     text-align: center;
     padding: 30px 0 0;
 }
+
+.widget.contact-widget .phone .icon {
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.colophon {
+    font-size: 14px;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 30px 0 0;
+}
+
+.widget.contact-widget .phone .icon {
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.colophon {
+    font-size: 14px;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 30px 0 0;
+}
+
+.widget.contact-widget .phone .icon {
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.colophon {
+    font-size: 14px;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 30px 0 0;
+}
+
 .widget.contact-widget .phone .icon {
     position: absolute;
     left: 0;

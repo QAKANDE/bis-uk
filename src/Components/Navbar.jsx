@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/Navbar.css';
+import logo from '../Assets/Images/bisbeautyylogo.jpg';
 
 class Navbar extends Component {
 	state = {};
@@ -10,7 +11,9 @@ class Navbar extends Component {
 				<div className="container">
 					<div className="row">
 						<div className="col-md-4 clearfix">
-							<div className="logo pull-left">logo</div>
+							<div className="logo pull-left mb-3">
+								<img src={logo} id="logo" />
+							</div>
 						</div>
 						<div className="col-md-8 clearfix">
 							<div className="d-flex flex-row shop-menu clearfix pull-right">
@@ -22,7 +25,7 @@ class Navbar extends Component {
 										<Link to="/portfolio">Portfolio</Link>
 									</li>
 									<li>
-										<Link to="bookus">Book us</Link>
+										<Link to="/bookus">Book us</Link>
 									</li>
 								</ul>
 							</div>
