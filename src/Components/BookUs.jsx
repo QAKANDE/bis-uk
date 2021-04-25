@@ -11,7 +11,7 @@ class BookUs extends Component {
       custName: '',
       custEmail: '',
       addressLine1: '',
-      addressLine2: '',
+      phoneNumber: '',
       postCode: '',
       additionalInfo: '',
     },
@@ -25,6 +25,91 @@ class BookUs extends Component {
     this.setState({
       bookingDetails,
     })
+  }
+
+  sendBookingDetails = async (e) => {
+    e.preventDefault()
+    if (this.state.bookingDetails.additionalInfo === '') {
+      const details = {
+        customerName: this.state.bookingDetails.custName,
+        customerEmail: this.state.bookingDetails.custEmail,
+        customerNumber: this.state.bookingDetails.phoneNumber,
+        customerAddress:
+          this.state.bookingDetails.addressLine1 +
+          ' ' +
+          this.state.bookingDetails.postCode,
+        appointmentDate: this.state.bookingDetails.dateOfAppointment,
+        appointmentTime: this.state.bookingDetails.timeOfAppointment,
+        serviceRequired: this.state.service,
+        info: 'No extra instructions required',
+      }
+      const response = await fetch(
+        'http://localhost:3003/appointments/new-appointment',
+        {
+          method: 'POST',
+          body: JSON.stringify(details),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+      )
+      if (response.ok) {
+        alert('Success')
+        this.setState({
+          service: '',
+          bookingDetails: {
+            dateOfAppointment: '',
+            timeOfAppointment: '',
+            custName: '',
+            custEmail: '',
+            addressLine1: '',
+            phoneNumber: '',
+            postCode: '',
+            additionalInfo: '',
+          },
+        })
+      }
+    } else {
+      const details = {
+        customerName: this.state.bookingDetails.custName,
+        customerEmail: this.state.bookingDetails.custEmail,
+        customerNumber: this.state.bookingDetails.phoneNumber,
+        customerAddress:
+          this.state.bookingDetails.addressLine1 +
+          ' ' +
+          this.state.bookingDetails.postCode,
+        appointmentDate: this.state.bookingDetails.dateOfAppointment,
+        appointmentTime: this.state.bookingDetails.timeOfAppointment,
+        serviceRequired: this.state.service,
+        info: this.state.bookingDetails.additionalInfo,
+      }
+      const response = await fetch(
+        'http://localhost:3003/appointments/new-appointment',
+        {
+          method: 'POST',
+          body: JSON.stringify(details),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+      )
+      if (response.ok) {
+        alert('Success')
+        this.setState({
+          service: '',
+          bookingDetails: {
+            dateOfAppointment: '',
+            timeOfAppointment: '',
+            custName: '',
+            custEmail: '',
+            addressLine1: '',
+            phoneNumber: '',
+            postCode: '',
+            additionalInfo: '',
+          },
+        })
+      }
+    }
   }
   render() {
     return (
@@ -104,13 +189,13 @@ class BookUs extends Component {
                 />
               </div>
               <div className="col-md-6">
-                <label>Address Line 2</label>
+                <label>Phone number</label>
                 <input
                   className="mb-4"
                   type="text"
-                  id="addressLine2"
+                  id="phoneNumber"
                   size="md"
-                  value={this.state.bookingDetails.addressLine2}
+                  value={this.state.bookingDetails.phoneNumber}
                   onChange={(e) => this.updateBookingDetails(e)}
                 />
               </div>
@@ -138,7 +223,12 @@ class BookUs extends Component {
               </div>
             </div>
             <div className="d-flex justify-content-center">
-              <button className="button large">Book now</button>
+              <button
+                className="button large"
+                onClick={(e) => this.sendBookingDetails(e)}
+              >
+                Book now
+              </button>
             </div>
           </form>
         </Container>

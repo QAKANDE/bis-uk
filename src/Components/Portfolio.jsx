@@ -6,35 +6,108 @@ import '../css/Portfolio.css'
 class Portfolio extends Component {
   state = {
     arr: [1, 2, 3, 4, 5, 6],
+    fullGlamImages: [],
+    fullGlamFeatures: [],
+    naturalGlamFeatures: [],
+    naturalGlamImages: [],
+    softGlamFeatures: [],
+    softGlamImages: [],
+    naturalGlam: [],
+    softGlam: [],
+  }
+
+  componentDidMount = async () => {
+    const response = await fetch('http://localhost:3003/services/', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    const services = await response.json()
+
+    const fullGlam = services.filter(
+      (service) => service.serviceName === 'Full Glam',
+    )
+    const naturalGlam = services.filter(
+      (service) => service.serviceName === 'Natural Glam',
+    )
+    const softGlam = services.filter(
+      (service) => service.serviceName === 'Soft Glam',
+    )
+    this.setState({
+      fullGlamFeatures: fullGlam[0].features,
+      fullGlamImages: fullGlam[0].images,
+      naturalGlamFeatures: naturalGlam[0].features,
+      naturalGlamImages: naturalGlam[0].images,
+      softGlamFeatures: softGlam[0].features,
+      softGlamImages: softGlam[0].images,
+    })
+    console.log(this.state.naturalGlamFeatures)
   }
   render() {
     return (
-      <Container>
+      <Container className="mb-5 mt-5">
         <h2 className="section-title">Previous works</h2>
-        <CardGroup>
-          <div className="row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-3 mb-4 text-center">
-            {this.state.arr.map((r) => {
-              return (
-                <Card className="col-md-6">
-                  <Card.Img variant="top" src={picture} />
-                  <Card.Body>
-                    <Card.Title>Card title</Card.Title>
-                    <Card.Text>
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </Card.Text>
-                  </Card.Body>
-                  <Card.Footer>
-                    <small className="text-muted">
-                      Last updated 3 mins ago
-                    </small>
-                  </Card.Footer>
-                </Card>
-              )
-            })}
-          </div>
-        </CardGroup>
+        <h3 className="text-center mb-5">FULL GLAM</h3>
+        <h3 className="mb-3">Features</h3>
+        <div className="row">
+          {this.state.fullGlamFeatures.map((feature) => {
+            return (
+              <div className="col-md-4">
+                <p className="feature-wrapper">{feature.text}</p>
+              </div>
+            )
+          })}
+        </div>
+        <div className="row mt-5">
+          {this.state.fullGlamImages.map((picture) => {
+            return (
+              <div className="col-md-4">
+                <img src={picture.url} />
+              </div>
+            )
+          })}
+        </div>
+        <h3 className="text-center mb-5 mt-5">NATURAL GLAM</h3>
+        <h3 className="mb-3">Features</h3>
+        <div className="row">
+          {this.state.naturalGlamFeatures.map((feature) => {
+            return (
+              <div className="col-md-4">
+                <p className="feature-wrapper">{feature.text}</p>
+              </div>
+            )
+          })}
+        </div>
+        <div className="row mt-5">
+          {this.state.naturalGlamImages.map((picture) => {
+            return (
+              <div className="col-md-4">
+                <img src={picture.url} />
+              </div>
+            )
+          })}
+        </div>
+        <h3 className="text-center mb-5 mt-5">SOFT GLAM</h3>
+        <h3 className="mb-3">Features</h3>
+        <div className="row">
+          {this.state.softGlamFeatures.map((feature) => {
+            return (
+              <div className="col-md-4">
+                <p className="feature-wrapper">{feature.text}</p>
+              </div>
+            )
+          })}
+        </div>
+        <div className="row mt-5">
+          {this.state.softGlamImages.map((picture) => {
+            return (
+              <div className="col-md-4">
+                <img src={picture.url} />
+              </div>
+            )
+          })}
+        </div>
       </Container>
     )
   }
