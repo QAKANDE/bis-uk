@@ -1,11 +1,12 @@
-import React, { Component } from "react";
-import person1 from "../Assets/Images/person-1.jpg";
-import person2 from "../Assets/Images/person-2.jpg";
-import person3 from "../Assets/Images/person-3.jpg";
-import person4 from "../Assets/Images/person-4.jpg";
+import React, { Component } from 'react'
+import person1 from '../Assets/Images/person-1.jpg'
+import person2 from '../Assets/Images/person-2.jpg'
+import person3 from '../Assets/Images/person-3.jpg'
+import person4 from '../Assets/Images/person-4.jpg'
 
 class Team extends Component {
-  state = {};
+  state = {}
+
   render() {
     return (
       <div className="fullwidth-block team-section">
@@ -63,8 +64,8 @@ class Team extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Team;
+export default Team

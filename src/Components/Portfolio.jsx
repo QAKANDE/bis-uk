@@ -51,19 +51,19 @@ class Portfolio extends Component {
         <h3 className="text-center mb-5">FULL GLAM</h3>
         <h3 className="mb-3">Features</h3>
         <div className="row">
-          {this.state.fullGlamFeatures.map((feature) => {
+          {this.state.fullGlamFeatures.map((feature, index) => {
             return (
-              <div className="col-md-4">
+              <div className="col-md-4" key={index}>
                 <p className="feature-wrapper">{feature.text}</p>
               </div>
             )
           })}
         </div>
         <div className="row mt-5">
-          {this.state.fullGlamImages.map((picture) => {
+          {this.state.fullGlamImages.map((picture, index) => {
             return (
-              <div className="col-md-4">
-                <img src={picture.url} />
+              <div className="col-md-4" key={index}>
+                <img src={picture.url} className="service-image" />
               </div>
             )
           })}
@@ -71,19 +71,19 @@ class Portfolio extends Component {
         <h3 className="text-center mb-5 mt-5">NATURAL GLAM</h3>
         <h3 className="mb-3">Features</h3>
         <div className="row">
-          {this.state.naturalGlamFeatures.map((feature) => {
+          {this.state.naturalGlamFeatures.map((feature, index) => {
             return (
-              <div className="col-md-4">
+              <div className="col-md-4" key={index}>
                 <p className="feature-wrapper">{feature.text}</p>
               </div>
             )
           })}
         </div>
         <div className="row mt-5">
-          {this.state.naturalGlamImages.map((picture) => {
+          {this.state.naturalGlamImages.map((picture, index) => {
             return (
-              <div className="col-md-4">
-                <img src={picture.url} />
+              <div className="col-md-4" key={index}>
+                <img src={picture.url} className="service-image" />
               </div>
             )
           })}
@@ -91,19 +91,19 @@ class Portfolio extends Component {
         <h3 className="text-center mb-5 mt-5">SOFT GLAM</h3>
         <h3 className="mb-3">Features</h3>
         <div className="row">
-          {this.state.softGlamFeatures.map((feature) => {
+          {this.state.softGlamFeatures.map((feature, index) => {
             return (
-              <div className="col-md-4">
+              <div className="col-md-4" key={index}>
                 <p className="feature-wrapper">{feature.text}</p>
               </div>
             )
           })}
         </div>
         <div className="row mt-5">
-          {this.state.softGlamImages.map((picture) => {
+          {this.state.softGlamImages.map((picture, index) => {
             return (
-              <div className="col-md-4">
-                <img src={picture.url} />
+              <div className="col-md-4" key={index}>
+                <img src={picture.url} className="service-image" />
               </div>
             )
           })}

@@ -11,7 +11,7 @@ class Jumbo extends Component {
         <ul className="slides">
           <li
             style={{
-              backgroundImage: `url("https://res.cloudinary.com/quadri/image/upload/v1619362530/pexels-domineves-anthony-3681538_1_sbvika.jpg")`,
+              backgroundImage: `url(${slider1})`,
             }}
           >
             <div className="container">

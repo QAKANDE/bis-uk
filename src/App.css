@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 article,
 aside,
 details,
@@ -28,21 +29,15 @@ template {
     display: none;
 }
 
-.App,
-button,
-input,
-select,
-textarea {
-    font-family: sans-serif;
-}
-
 .App {
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 a {
     background: transparent;
     color: #c0c0c0 !important;
+    font-family: 'Montserrat', sans-serif;
 }
 
 a:hover,
@@ -55,35 +50,46 @@ a:active {
 h1 {
     font-size: 2em;
     margin: 0.67em 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h2 {
     font-size: 1.5em;
     margin: 0.83em 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
 }
 
 h3 {
     font-size: 1.17em;
     margin: 1em 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h4 {
     font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
     margin: 1.33em 0;
 }
 
 h5 {
     font-size: 0.83em;
     margin: 1.67em 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h6 {
     font-size: 0.75em;
     margin: 2.33em 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 ul li {
     list-style: none;
+    font-family: 'Montserrat', sans-serif;
 }
 
 abbr[title] {
@@ -108,7 +114,7 @@ code,
 kbd,
 pre,
 samp {
-    font-family: monospace, serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1em;
 }
 
@@ -249,7 +255,6 @@ table {
 .App {
     background-color: #151215;
     color: #aea9ad;
-    font-family: Arial, 'Open Sans', serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
@@ -272,6 +277,7 @@ p {
     padding-left: 0.1rem;
     text-align: center;
     width: auto;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .text-center {
@@ -288,114 +294,6 @@ form textarea {
 
 
 /* Reusable Components Style */
-
-.hero-slider {
-    position: relative;
-}
-
-.hero-slider .slides {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    *zoom: 1;
-}
-
-.hero-slider .slides:after {
-    content: ' ';
-    clear: both;
-    display: block;
-    overflow: hidden;
-    height: 0;
-}
-
-.hero-slider .slides li {
-    margin-right: -100%;
-    width: 100%;
-    float: left;
-    background-size: cover;
-    min-height: 860px;
-    background-position: center center;
-    padding-top: 200px;
-}
-
-.hero-slider .slides .slider-subtitle {
-    font-size: 30px;
-    font-size: 1.875rem;
-    color: white;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
-    margin: 0;
-    line-height: 1;
-}
-
-.hero-slider .slides .slider-title {
-    color: #cc7250;
-    font-size: 90px;
-    font-size: 5.625rem;
-    font-weight: 300;
-    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
-    text-transform: uppercase;
-    margin: 0 0 30px;
-    line-height: 1;
-    background-image: -webkit-linear-gradient(90deg, #cc7250, #f7d0c2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    word-break: break-all;
-}
-
-.hero-slider .slides p {
-    width: 50%;
-    margin-bottom: 50px;
-}
-
-@media screen and (max-width: 990px) {
-    .hero-slider .slides p {
-        width: 100%;
-    }
-}
-
-.hero-slider .flex-control-paging {
-    position: absolute;
-    bottom: 0;
-    z-index: 9;
-    bottom: 30px;
-    width: 100%;
-    text-align: center;
-}
-
-.hero-slider .flex-control-paging li {
-    display: inline-block;
-    margin: 0 5px;
-}
-
-.hero-slider .flex-control-paging li a {
-    display: block;
-    width: 15px;
-    height: 15px;
-    border: 2px solid white;
-    overflow: hidden;
-    text-indent: -9999px;
-    -webkit-transition: 0.3s ease;
-    transition: 0.3s ease;
-    cursor: pointer;
-}
-
-.hero-slider .flex-control-paging li a.flex-active {
-    border: none;
-    background-repeat: no-repeat;
-    background-image: url('C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\paging.png');
-}
-
-@media all and (-webkit-min-device-pixel-ratio: 1.5),
-all and (-o-min-device-pixel-ratio: 3 / 2),
-all and (min--moz-device-pixel-ratio: 1.5),
-all and (min-device-pixel-ratio: 1.5) {
-    .hero-slider .flex-control-paging li a.flex-active {
-        background-image: url('C:\Users\quadr\OneDrive\Documents\GitHub\bis-uk\src\Assets\Images\paging@2x.png');
-        background-size: 15px 15px;
-    }
-}
 
 .fullwidth-block .container {
     padding: 50px 0;
@@ -414,7 +312,7 @@ all and (min-device-pixel-ratio: 1.5) {
     color: #787377;
     margin: 0 0 50px;
     font-weight: 300;
-    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .button {
@@ -475,6 +373,7 @@ all and (min-device-pixel-ratio: 1.5) {
 .feature {
     text-align: center;
     margin-bottom: 50px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .feature .feature-title {
@@ -482,7 +381,7 @@ all and (min-device-pixel-ratio: 1.5) {
     font-size: 1.875rem;
     text-transform: uppercase;
     font-weight: 300;
-    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-image: -webkit-linear-gradient(90deg, #cc7250, #f7d0c2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -495,6 +394,7 @@ all and (min-device-pixel-ratio: 1.5) {
     padding-left: 100px;
     margin-bottom: 30px;
     min-height: 100px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .news:after {
@@ -503,6 +403,7 @@ all and (min-device-pixel-ratio: 1.5) {
     display: block;
     overflow: hidden;
     height: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .news .entry-date {
@@ -518,7 +419,7 @@ all and (min-device-pixel-ratio: 1.5) {
     font-size: 3.75rem;
     line-height: 1;
     font-weight: 300;
-    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-image: -webkit-linear-gradient(90deg, #cc7250, #f7d0c2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -526,7 +427,7 @@ all and (min-device-pixel-ratio: 1.5) {
 
 .news .entry-date .monthyear {
     color: #837e82;
-    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 18px;
     font-size: 1.125rem;
@@ -557,7 +458,7 @@ all and (min-device-pixel-ratio: 1.5) {
     margin: 0 10px;
     color: #dfdfdf;
     text-transform: uppercase;
-    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     position: relative;
     font-size: 12px;
     font-size: 0.75rem;
@@ -655,7 +556,7 @@ all and (min-device-pixel-ratio: 1.5) {
     margin: 0;
     font-size: 14px;
     font-size: 0.875rem;
-    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     color: white;
     font-weight: 400;
@@ -665,6 +566,7 @@ all and (min-device-pixel-ratio: 1.5) {
     font-size: 14px;
     font-size: 0.875rem;
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .contact-form {
@@ -691,6 +593,7 @@ all and (min-device-pixel-ratio: 1.5) {
     outline: none;
     -webkit-transition: 0.3s ease;
     transition: 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .contact-form input:not([type='submit']):hover,
@@ -840,6 +743,7 @@ all and (min-device-pixel-ratio: 1.5) {
     border: 2px solid #3a353a;
     padding: 15px 20px;
     background: transparent;
+    font-family: 'Montserrat', sans-serif;
     color: white;
     outline: none;
     -webkit-transition: 0.3s ease;
@@ -871,7 +775,7 @@ all and (min-device-pixel-ratio: 1.5) {
     outline: none;
     font-size: 12px;
     font-size: 0.75rem;
-    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     -webkit-transition: 0.3s ease;
     transition: 0.3s ease;
 }
@@ -884,7 +788,7 @@ all and (min-device-pixel-ratio: 1.5) {
 .prices li {
     padding: 15px 0;
     border-bottom: 1px solid #3a353a;
-    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     font-size: 14px;
     font-size: 0.875rem;
@@ -2385,7 +2289,7 @@ all and (min-device-pixel-ratio: 1.5) {
     color: white;
     font-size: 14px;
     font-size: 0.875rem;
-    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     margin: 0;
     line-height: 1;
@@ -2505,7 +2409,7 @@ all and (min-device-pixel-ratio: 1.5) {
 .mobile-navigation .menu-item a {
     display: block;
     padding: 20px;
-    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     font-size: 12px;
     font-size: 0.75rem;
@@ -2531,6 +2435,7 @@ all and (min-device-pixel-ratio: 1.5) {
 .page h5,
 .page h6 {
     color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .page .section-title {
@@ -2539,6 +2444,7 @@ all and (min-device-pixel-ratio: 1.5) {
     font-size: 48px;
     font-size: 3rem;
     margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .page p {
@@ -2571,7 +2477,7 @@ img {
 }
 
 .widget .widget-title {
-    font-family: 'Novecento Sans', 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     color: white;
     font-weight: 600;
@@ -2619,6 +2525,58 @@ img {
 
 .widget.contact-widget address .icon,
 .widget.contact-widget .mail .icon,
+.widget.contact-widget .phone .icon {
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.colophon {
+    font-size: 14px;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 30px 0 0;
+}
+
+.widget.contact-widget .phone .icon {
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.colophon {
+    font-size: 14px;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 30px 0 0;
+}
+
+.widget.contact-widget .phone .icon {
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.colophon {
+    font-size: 14px;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 30px 0 0;
+}
+
+.widget.contact-widget .phone .icon {
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.colophon {
+    font-size: 14px;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 30px 0 0;
+}
+
 .widget.contact-widget .phone .icon {
     position: absolute;
     left: 0;

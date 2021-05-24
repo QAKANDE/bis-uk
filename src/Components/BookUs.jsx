@@ -1,20 +1,21 @@
 import React, { Component } from 'react'
 import { Container, Form, Col, Button, Row } from 'react-bootstrap'
+import { openPopupWidget, InlineWidget, isCalendlyEvent } from 'react-calendly'
+import Scheduler from './Scheduler'
 import '../css/Bookus.css'
 
 class BookUs extends Component {
   state = {
     service: '',
     bookingDetails: {
-      dateOfAppointment: '',
-      timeOfAppointment: '',
       custName: '',
       custEmail: '',
-      addressLine1: '',
       phoneNumber: '',
-      postCode: '',
       additionalInfo: '',
     },
+    setMeeting: true,
+    errorInForm: false,
+    noServiceSelected: false,
   }
 
   updateBookingDetails = (event) => {
@@ -29,88 +30,64 @@ class BookUs extends Component {
 
   sendBookingDetails = async (e) => {
     e.preventDefault()
-    if (this.state.bookingDetails.additionalInfo === '') {
-      const details = {
-        customerName: this.state.bookingDetails.custName,
-        customerEmail: this.state.bookingDetails.custEmail,
-        customerNumber: this.state.bookingDetails.phoneNumber,
-        customerAddress:
-          this.state.bookingDetails.addressLine1 +
-          ' ' +
-          this.state.bookingDetails.postCode,
-        appointmentDate: this.state.bookingDetails.dateOfAppointment,
-        appointmentTime: this.state.bookingDetails.timeOfAppointment,
-        serviceRequired: this.state.service,
-        info: 'No extra instructions required',
-      }
-      const response = await fetch(
-        'http://localhost:3003/appointments/new-appointment',
-        {
-          method: 'POST',
-          body: JSON.stringify(details),
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        },
-      )
-      if (response.ok) {
-        alert('Success')
-        this.setState({
-          service: '',
-          bookingDetails: {
-            dateOfAppointment: '',
-            timeOfAppointment: '',
-            custName: '',
-            custEmail: '',
-            addressLine1: '',
-            phoneNumber: '',
-            postCode: '',
-            additionalInfo: '',
-          },
-        })
-      }
+    if (this.state.service === '') {
+      this.setState({ noServiceSelected: true })
+      setTimeout(() => {
+        this.setState({ noServiceSelected: false })
+      }, 1200)
+    } else if (
+      this.state.bookingDetails.custName === '' ||
+      this.state.bookingDetails.custEmail === '' ||
+      this.state.bookingDetails.phoneNumber === ''
+    ) {
+      this.setState({ errorInForm: true })
+      setTimeout(() => {
+        this.setState({ errorInForm: false })
+      }, 1200)
     } else {
-      const details = {
-        customerName: this.state.bookingDetails.custName,
-        customerEmail: this.state.bookingDetails.custEmail,
-        customerNumber: this.state.bookingDetails.phoneNumber,
-        customerAddress:
-          this.state.bookingDetails.addressLine1 +
-          ' ' +
-          this.state.bookingDetails.postCode,
-        appointmentDate: this.state.bookingDetails.dateOfAppointment,
-        appointmentTime: this.state.bookingDetails.timeOfAppointment,
-        serviceRequired: this.state.service,
-        info: this.state.bookingDetails.additionalInfo,
+      const url = 'https://calendly.com/quadriomofolarinakande/60min'
+      const styles = {
+        height: '1000px',
       }
-      const response = await fetch(
-        'http://localhost:3003/appointments/new-appointment',
-        {
-          method: 'POST',
-          body: JSON.stringify(details),
-          headers: {
-            'Content-Type': 'application/json',
-          },
+      const pageSettings = {
+        backgroundColor: 'ffffff',
+        hideEventTypeDetails: false,
+        hideLandingPageDetails: false,
+        primaryColor: '00a2ff',
+        textColor: '4d5055',
+      }
+      const prefill = {
+        email: this.state.bookingDetails.custEmail,
+        name: this.state.bookingDetails.custName,
+        customAnswers: {
+          a1:
+            'Customer Number : ' +
+            ' ' +
+            this.state.bookingDetails.phoneNumber +
+            '  ' +
+            'Service name : ' +
+            ' ' +
+            this.state.service +
+            '  ' +
+            'Additional Info:' +
+            '  ' +
+            this.state.bookingDetails.additionalInfo,
         },
-      )
-      if (response.ok) {
-        alert('Success')
-        this.setState({
-          service: '',
-          bookingDetails: {
-            dateOfAppointment: '',
-            timeOfAppointment: '',
-            custName: '',
-            custEmail: '',
-            addressLine1: '',
-            phoneNumber: '',
-            postCode: '',
-            additionalInfo: '',
-          },
-        })
       }
+      openPopupWidget({ url, prefill, pageSettings })
+      function isCalendlyEvent(e) {
+        return e.data.event && e.data.event.indexOf('calendly') === 0
+      }
+      window.addEventListener('message', function (e) {
+        if (isCalendlyEvent(e)) {
+          if (e.data.event === 'calendly.event_scheduled') {
+            window.location.href = '/payment'
+          }
+        }
+      })
     }
   }
+
   render() {
     return (
       <>
@@ -120,6 +97,7 @@ class BookUs extends Component {
             <div className="d-flex justify-content-center mb-4 mt-5">
               <label for="services">Select a service</label>
               <select
+                htmlFor="drop-down-form"
                 className="mx-3"
                 id="drop-down-form"
                 onChange={(e) =>
@@ -132,32 +110,11 @@ class BookUs extends Component {
                 <option value="soft_glam">Soft glam</option>
               </select>
             </div>
-            <div>
-              <label>Pick a date</label>
-              <input
-                className="mb-4"
-                type="date"
-                id="dateOfAppointment"
-                size="md"
-                value={this.state.bookingDetails.dateOfAppointment}
-                onChange={(e) => this.updateBookingDetails(e)}
-              />
-            </div>
-            <div>
-              <label>Pick a time</label>
-              <input
-                className="mb-4"
-                type="time"
-                id="timeOfAppointment"
-                size="md"
-                value={this.state.bookingDetails.timeOfAppointment}
-                onChange={(e) => this.updateBookingDetails(e)}
-              />
-            </div>
             <div className="row">
               <div className="col-md-6">
                 <label>Enter your name</label>
                 <input
+                  htmlFor="custName"
                   className="mb-4"
                   type="text"
                   id="custName"
@@ -169,6 +126,7 @@ class BookUs extends Component {
               <div className="col-md-6">
                 <label>Enter your email</label>
                 <input
+                  htmlFor="email"
                   className="mb-4"
                   type="email"
                   id="custEmail"
@@ -178,19 +136,9 @@ class BookUs extends Component {
                 />
               </div>
               <div className="col-md-6">
-                <label>Address Line 1</label>
-                <input
-                  className="mb-4"
-                  type="text"
-                  id="addressLine1"
-                  size="md"
-                  value={this.state.bookingDetails.addressLine1}
-                  onChange={(e) => this.updateBookingDetails(e)}
-                />
-              </div>
-              <div className="col-md-6">
                 <label>Phone number</label>
                 <input
+                  htmlFor="phoneNumber"
                   className="mb-4"
                   type="text"
                   id="phoneNumber"
@@ -200,19 +148,9 @@ class BookUs extends Component {
                 />
               </div>
               <div className="col-md-6">
-                <label>Post Code</label>
-                <input
-                  className="mb-4"
-                  type="text"
-                  id="postCode"
-                  size="md"
-                  value={this.state.bookingDetails.postCode}
-                  onChange={(e) => this.updateBookingDetails(e)}
-                />
-              </div>
-              <div className="col-md-6">
                 <label>Additional information</label>
                 <input
+                  htmlFor="additionalInfo"
                   className="mb-4"
                   type="text"
                   id="additionalInfo"
@@ -222,12 +160,30 @@ class BookUs extends Component {
                 />
               </div>
             </div>
+            {this.state.noServiceSelected === true ? (
+              <div>
+                <p className="text-center" style={{ color: 'red' }}>
+                  Please select a service...
+                </p>
+              </div>
+            ) : (
+              <div></div>
+            )}
+            {this.state.errorInForm === true ? (
+              <div>
+                <p className="text-center" style={{ color: 'red' }}>
+                  Input field cannot be empty
+                </p>
+              </div>
+            ) : (
+              <div></div>
+            )}
             <div className="d-flex justify-content-center">
               <button
                 className="button large"
                 onClick={(e) => this.sendBookingDetails(e)}
               >
-                Book now
+                Pick a date and time
               </button>
             </div>
           </form>

@@ -9,7 +9,7 @@ class Footer extends Component {
     messageDetails: {
       name: '',
       email: '',
-      phoneNumber: '',
+      customerNumber: '',
     },
   }
 
@@ -63,7 +63,9 @@ class Footer extends Component {
             </div>
             <div className="col-md-6">
               <div className="widget">
-                <h3 className="widget-title">Send us a message</h3>
+                <h3 className="widget-title">
+                  Send us a message or a feedback
+                </h3>
                 <form className="subscribe-form">
                   <input
                     className="mb-4"
@@ -77,8 +79,8 @@ class Footer extends Component {
                   <input
                     className="mb-4"
                     type="text"
-                    id="phoneNumber"
-                    value={this.state.messageDetails.phoneNumber}
+                    id="customerNumber"
+                    value={this.state.messageDetails.customerNumber}
                     placeholder="Enter the best number to reach you on"
                     size="md"
                     onChange={(e) => this.updateSendMessageDetails(e)}

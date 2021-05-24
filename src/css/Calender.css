@@ -1,0 +1,13 @@
+.calender-button {
+    background-color: black;
+    cursor: pointer;
+    width: 100px;
+    text-align: center;
+}
+
+.btn-disable {
+    cursor: not-allowed;
+    pointer-events: none;
+    color: #c0c0c0;
+    background-color: #ffffff;
+}

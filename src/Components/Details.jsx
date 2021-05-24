@@ -36,7 +36,10 @@ class Details extends Component {
               return (
                 <div className="col-md-4">
                   <div className="feature">
-                    <img src={picture.url} className="feature-image" />
+                    <img
+                      src={picture.url}
+                      className="feature-image service-image"
+                    />
                   </div>
                 </div>
               )

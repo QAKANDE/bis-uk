@@ -6,6 +6,8 @@ import BookUs from './Components/BookUs'
 import Portfolio from './Components/Portfolio'
 import Footer from './Components/Footer'
 import Details from './Components/Details'
+import Payment from './Components/Payment'
+import PaymentSuccess from './Components/PaymentSuccess'
 
 function App() {
     return ( <
@@ -27,7 +29,14 @@ function App() {
         />{' '} <
         Route path = "/details/:id"
         exact component = { Details }
-        /> <Footer / > { ' ' } <
+        />{' '} <
+        Route path = "/payment"
+        exact component = { Payment }
+        />{' '} <
+        Route path = "/payment-success/:name"
+        exact component = { PaymentSuccess }
+        />{' '} <
+        Footer / > { ' ' } <
         /Router>{' '} <
         /div>{' '} <
         /div>{' '} <
