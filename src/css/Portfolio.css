@@ -1,3 +1,30 @@
 .card {
     background-color: #1b181b !important;
 }
+
+#paginator-ultimate-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 7rem;
+    margin-bottom: 4rem;
+}
+
+#paginator-wrapper {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 700px) {
+    #paginator-ultimate-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 7rem;
+        margin-bottom: 4rem;
+    }
+    #paginator-wrapper {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+    }
+}

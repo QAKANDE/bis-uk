@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Navbar from './Navbar'
 import Jumbo from '../Components/Jumbo'
-import LatestNews from './LatestNews'
+
 import Services from '../Components/Services'
 import Team from '../Components/Team'
 import About from '../Components/About'

@@ -24,7 +24,7 @@ class Footer extends Component {
       <footer className="site-footer">
         <div className="container">
           <div className="row">
-            <div className="col-md-3">
+            {/* <div className="col-md-3">
               <div className="widget contact-widget">
                 <h3 className="widget-title">Contact</h3>
                 <div className="contact-info">
@@ -40,7 +40,7 @@ class Footer extends Component {
                   </a>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="col-md-3">
               <div className="widget">
                 <h3 className="widget-title">Social Media</h3>
