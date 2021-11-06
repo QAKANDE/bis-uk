@@ -1,92 +1,92 @@
-import React, { Component } from 'react'
-import { Container, Form, Col, Button, Row } from 'react-bootstrap'
-import { openPopupWidget, InlineWidget, isCalendlyEvent } from 'react-calendly'
-import Scheduler from './Scheduler'
-import '../css/Bookus.css'
+import React, { Component } from "react";
+import { Container, Form, Col, Button, Row } from "react-bootstrap";
+import { openPopupWidget, InlineWidget, isCalendlyEvent } from "react-calendly";
+import Scheduler from "./Scheduler";
+import "../css/Bookus.css";
 
 class BookUs extends Component {
   state = {
-    service: '',
+    service: "",
     bookingDetails: {
-      custName: '',
-      custEmail: '',
-      phoneNumber: '',
-      additionalInfo: '',
+      custName: "",
+      custEmail: "",
+      phoneNumber: "",
+      additionalInfo: "",
     },
     setMeeting: true,
     errorInForm: false,
     noServiceSelected: false,
-  }
+  };
 
   updateBookingDetails = (event) => {
-    event.preventDefault()
-    let bookingDetails = this.state.bookingDetails
-    let id = event.currentTarget.id
-    bookingDetails[id] = event.currentTarget.value
+    event.preventDefault();
+    let bookingDetails = this.state.bookingDetails;
+    let id = event.currentTarget.id;
+    bookingDetails[id] = event.currentTarget.value;
     this.setState({
       bookingDetails,
-    })
-  }
+    });
+  };
 
   sendBookingDetails = async (e) => {
-    e.preventDefault()
-    if (this.state.service === '') {
-      this.setState({ noServiceSelected: true })
+    e.preventDefault();
+    if (this.state.service === "") {
+      this.setState({ noServiceSelected: true });
       setTimeout(() => {
-        this.setState({ noServiceSelected: false })
-      }, 1200)
+        this.setState({ noServiceSelected: false });
+      }, 1200);
     } else if (
-      this.state.bookingDetails.custName === '' ||
-      this.state.bookingDetails.custEmail === '' ||
-      this.state.bookingDetails.phoneNumber === ''
+      this.state.bookingDetails.custName === "" ||
+      this.state.bookingDetails.custEmail === "" ||
+      this.state.bookingDetails.phoneNumber === ""
     ) {
-      this.setState({ errorInForm: true })
+      this.setState({ errorInForm: true });
       setTimeout(() => {
-        this.setState({ errorInForm: false })
-      }, 1200)
+        this.setState({ errorInForm: false });
+      }, 1200);
     } else {
-      const url = 'https://calendly.com/quadriomofolarinakande/60min'
+      const url = "https://calendly.com/bpolufade/60min";
       const styles = {
-        height: '1000px',
-      }
+        height: "1000px",
+      };
       const pageSettings = {
-        backgroundColor: 'ffffff',
+        backgroundColor: "ffffff",
         hideEventTypeDetails: false,
         hideLandingPageDetails: false,
-        primaryColor: '00a2ff',
-        textColor: '4d5055',
-      }
+        primaryColor: "00a2ff",
+        textColor: "4d5055",
+      };
       const prefill = {
         email: this.state.bookingDetails.custEmail,
         name: this.state.bookingDetails.custName,
         customAnswers: {
           a1:
-            'Customer Number : ' +
-            ' ' +
+            "Phone Number: " +
+            " " +
             this.state.bookingDetails.phoneNumber +
-            '  ' +
-            'Service name : ' +
-            ' ' +
+            "  " +
+            "Service name : " +
+            " " +
             this.state.service +
-            '  ' +
-            'Additional Info:' +
-            '  ' +
+            "  " +
+            "Additional Info:" +
+            "  " +
             this.state.bookingDetails.additionalInfo,
         },
-      }
-      openPopupWidget({ url, prefill, pageSettings })
+      };
+      openPopupWidget({ url, prefill, pageSettings });
       function isCalendlyEvent(e) {
-        return e.data.event && e.data.event.indexOf('calendly') === 0
+        return e.data.event && e.data.event.indexOf("calendly") === 0;
       }
-      window.addEventListener('message', function (e) {
+      window.addEventListener("message", function (e) {
         if (isCalendlyEvent(e)) {
-          if (e.data.event === 'calendly.event_scheduled') {
-            window.location.href = '/payment'
+          if (e.data.event === "calendly.event_scheduled") {
+            window.location.href = `/payment-success/ ${this.state.custName}`;
           }
         }
-      })
+      });
     }
-  }
+  };
 
   render() {
     return (
@@ -162,7 +162,7 @@ class BookUs extends Component {
             </div>
             {this.state.noServiceSelected === true ? (
               <div>
-                <p className="text-center" style={{ color: 'red' }}>
+                <p className="text-center" style={{ color: "red" }}>
                   Please select a service...
                 </p>
               </div>
@@ -171,7 +171,7 @@ class BookUs extends Component {
             )}
             {this.state.errorInForm === true ? (
               <div>
-                <p className="text-center" style={{ color: 'red' }}>
+                <p className="text-center" style={{ color: "red" }}>
                   Input field cannot be empty
                 </p>
               </div>
@@ -189,8 +189,8 @@ class BookUs extends Component {
           </form>
         </Container>
       </>
-    )
+    );
   }
 }
 
-export default BookUs
+export default BookUs;
