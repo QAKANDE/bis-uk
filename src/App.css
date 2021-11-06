@@ -605,22 +605,22 @@ form textarea {
   background-position: 10px 15px;
 }
 
-.contact-form #name {
+/* .contact-form #name {
   background-image: url("/Users/quadri.a/Documents/Github/bis-uk/src/Assets/Images/icon-contact-user.png");
-}
+} */
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5),
   all and (-o-min-device-pixel-ratio: 3 / 2),
   all and (min--moz-device-pixel-ratio: 1.5),
   all and (min-device-pixel-ratio: 1.5) {
   .contact-form #name {
-    background-image: url("/Users/quadri.a/Documents/Github/bis-uk/src/Assets/Images/icon-contact-user@2x.png");
+    /* background-image: url("/Users/quadri.a/Documents/Github/bis-uk/src/Assets/Images/icon-contact-user@2x.png"); */
     background-size: 16px 18px;
   }
 }
 
 .contact-form #email {
-  background-image: url("/Users/quadri.a/Documents/Github/bis-uk/src/Assets/Images/icon-contact-envelope.png");
+  /* background-image: url("/Users/quadri.a/Documents/Github/bis-uk/src/Assets/Images/icon-contact-envelope.png"); */
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5),
@@ -628,13 +628,13 @@ form textarea {
   all and (min--moz-device-pixel-ratio: 1.5),
   all and (min-device-pixel-ratio: 1.5) {
   .contact-form #email {
-    background-image: url("\/Users/quadri.a/Documents/Github/bis-uk/src/Assets/Images/icon-contact-envelope@2x.png");
+    /* background-image: url("\/Users/quadri.a/Documents/Github/bis-uk/src/Assets/Images/icon-contact-envelope@2x.png"); */
     background-size: 16px 11px;
   }
 }
 
 .contact-form #website {
-  background-image: url("\/Users/quadri.a/Documents/Github/bis-uk/src/Assets/Images/icon-contact-globe.png");
+  /* background-image: url("\/Users/quadri.a/Documents/Github/bis-uk/src/Assets/Images/icon-contact-globe.png"); */
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5),
@@ -642,13 +642,13 @@ form textarea {
   all and (min--moz-device-pixel-ratio: 1.5),
   all and (min-device-pixel-ratio: 1.5) {
   .contact-form #website {
-    background-image: url("\/Users/quadri.a/Documents/Github/bis-uk/src/Assets/Images/icon-contact-globe@2x.png");
+    /* background-image: url("\/Users/quadri.a/Documents/Github/bis-uk/src/Assets/Images/icon-contact-globe@2x.png"); */
     background-size: 16px 16px;
   }
 }
 
 .contact-form #message {
-  background-image: url("\/Users/quadri.a/Documents/Github/bis-uk/src/Assets/Images/icon-contact-pencil.png");
+  /* background-image: url("\/Users/quadri.a/Documents/Github/bis-uk/src/Assets/Images/icon-contact-pencil.png"); */
   min-height: 200px;
 }
 
@@ -657,7 +657,7 @@ form textarea {
   all and (min--moz-device-pixel-ratio: 1.5),
   all and (min-device-pixel-ratio: 1.5) {
   .contact-form #message {
-    background-image: url("\/Users/quadri.a/Documents/Github/bis-uk/src/Assets/Images/icon-contact-pencil@2x.png");
+    /* background-image: url("\/Users/quadri.a/Documents/Github/bis-uk/src/Assets/Images/icon-contact-pencil@2x.png"); */
     background-size: 16px 17px;
   }
 }
