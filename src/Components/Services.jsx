@@ -9,12 +9,15 @@ class Services extends Component {
   };
 
   componentDidMount = async () => {
-    const response = await fetch("http://localhost:3003/services/", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      "https://bisbeautyukbackend-t36ss.ondigitalocean.app/services/",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const services = await response.json();
     this.setState({
       services,
