@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { Container, Card, CardDeck, CardGroup } from 'react-bootstrap'
-import picture from '../Assets/girl.jpg'
-import '../css/Portfolio.css'
+import React, { Component } from "react";
+import { Container, Card, CardDeck, CardGroup } from "react-bootstrap";
+import picture from "../Assets/girl.jpg";
+import "../css/Portfolio.css";
 
 class Portfolio extends Component {
   state = {
@@ -27,14 +27,14 @@ class Portfolio extends Component {
     prevButtonNatural: true,
     nextButtonSoft: false,
     prevButtonSoft: true,
-  }
+  };
 
   paginator(items, current_page, per_page_items) {
     let page = current_page || 1,
       per_page = per_page_items || 10,
       offset = (page - 1) * per_page,
       paginatedItems = items.slice(offset).slice(0, per_page_items),
-      total_pages = Math.ceil(items.length / per_page)
+      total_pages = Math.ceil(items.length / per_page);
 
     return {
       page: page,
@@ -44,43 +44,43 @@ class Portfolio extends Component {
       total: items.length,
       total_pages: total_pages,
       data: paginatedItems,
-    }
+    };
   }
 
   fetchDetails = async () => {
-    const response = await fetch('http://localhost:3003/services/', {
-      method: 'GET',
+    const response = await fetch("http://localhost:3003/services/", {
+      method: "GET",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-    })
-    const services = await response.json()
+    });
+    const services = await response.json();
 
     const fullGlam = services.filter(
-      (service) => service.serviceName === 'Full Glam',
-    )
+      (service) => service.serviceName === "Full Glam"
+    );
     const naturalGlam = services.filter(
-      (service) => service.serviceName === 'Natural Glam',
-    )
+      (service) => service.serviceName === "Natural Glam"
+    );
     const softGlam = services.filter(
-      (service) => service.serviceName === 'Soft Glam',
-    )
+      (service) => service.serviceName === "Soft Glam"
+    );
 
     const paginateFullGlam = this.paginator(
       fullGlam[0].images,
       this.state.pageNumber,
-      3,
-    )
+      3
+    );
     const paginateNaturalGlam = this.paginator(
       naturalGlam[0].images,
       this.state.naturalPageNumber,
-      3,
-    )
+      3
+    );
     const paginateSoftGlam = this.paginator(
       softGlam[0].images,
       this.state.softPageNumber,
-      3,
-    )
+      3
+    );
     this.setState({
       fullGlamFeatures: fullGlam[0].features,
       fullGlamImages: paginateFullGlam.data,
@@ -91,15 +91,15 @@ class Portfolio extends Component {
       next_page_full_glam: paginateFullGlam.next_page,
       next_page_soft_glam: paginateSoftGlam.next_page,
       next_page_natural_glam: paginateNaturalGlam.next_page,
-    })
-  }
+    });
+  };
 
   componentDidMount = async () => {
-    this.fetchDetails()
-  }
+    this.fetchDetails();
+  };
   increasePaginate = () => {
     if (this.state.next_page_full_glam === null) {
-      this.setState({ nextButton: true })
+      this.setState({ nextButton: true });
     } else if (
       this.state.next_page_full_glam !== null ||
       this.state.next_page_full_glam >= 1
@@ -107,21 +107,21 @@ class Portfolio extends Component {
       this.setState({
         pageNumber: this.state.pageNumber + 1,
         prevButton: false,
-      })
+      });
     }
-    this.fetchDetails()
-  }
+    this.fetchDetails();
+  };
   decreasePaginate = () => {
     if (this.state.pageNumber === 1) {
-      this.setState({ prevButton: true })
+      this.setState({ prevButton: true });
     } else {
-      this.setState({ pageNumber: this.state.pageNumber - 1 })
+      this.setState({ pageNumber: this.state.pageNumber - 1 });
     }
-    this.fetchDetails()
-  }
+    this.fetchDetails();
+  };
   increaseNaturalGlamPaginate = () => {
     if (this.state.next_page_natural_glam === null) {
-      this.setState({ nextButtonNatural: true })
+      this.setState({ nextButtonNatural: true });
     } else if (
       this.state.next_page_natural_glam !== null ||
       this.state.next_page_natural_glam >= 1
@@ -129,21 +129,21 @@ class Portfolio extends Component {
       this.setState({
         naturalPageNumber: this.state.naturalPageNumber + 1,
         prevButtonNatural: false,
-      })
+      });
     }
-    this.fetchDetails()
-  }
+    this.fetchDetails();
+  };
   decreaseNaturalGlamPaginate = () => {
     if (this.state.naturalPageNumber === 1) {
-      this.setState({ prevButtonNatural: true })
+      this.setState({ prevButtonNatural: true });
     } else {
-      this.setState({ naturalPageNumber: this.state.naturalPageNumber - 1 })
+      this.setState({ naturalPageNumber: this.state.naturalPageNumber - 1 });
     }
-    this.fetchDetails()
-  }
+    this.fetchDetails();
+  };
   increaseSoftGlamPaginate = () => {
     if (this.state.next_page_soft_glam === null) {
-      this.setState({ nextButtonSoft: true })
+      this.setState({ nextButtonSoft: true });
     } else if (
       this.state.next_page_soft_glam !== null ||
       this.state.next_page_soft_glam >= 1
@@ -151,18 +151,18 @@ class Portfolio extends Component {
       this.setState({
         softPageNumber: this.state.softPageNumber + 1,
         prevButtonSoft: false,
-      })
+      });
     }
-    this.fetchDetails()
-  }
+    this.fetchDetails();
+  };
   decreaseSoftGlamPaginate = () => {
     if (this.state.softPageNumber === 1) {
-      this.setState({ prevButtonSoft: true })
+      this.setState({ prevButtonSoft: true });
     } else {
-      this.setState({ softPageNumber: this.state.softPageNumber - 1 })
+      this.setState({ softPageNumber: this.state.softPageNumber - 1 });
     }
-    this.fetchDetails()
-  }
+    this.fetchDetails();
+  };
   render() {
     return (
       <Container className="mb-5 mt-5">
@@ -175,7 +175,7 @@ class Portfolio extends Component {
               <div className="col-md-4" key={index}>
                 <p className="feature-wrapper">{feature.text}</p>
               </div>
-            )
+            );
           })}
         </div>
         <div className="row mt-5">
@@ -184,10 +184,10 @@ class Portfolio extends Component {
               <div className="col-md-4" key={index}>
                 <img src={picture.url} className="service-image" />
               </div>
-            )
+            );
           })}
         </div>
-        <div id="paginator-ultimate-wrapper">
+        {/* <div id="paginator-ultimate-wrapper">
           <div id="paginator-wrapper">
             <button
               onClick={() => this.increasePaginate()}
@@ -205,7 +205,7 @@ class Portfolio extends Component {
               Prev
             </button>
           </div>
-        </div>
+        </div> */}
 
         <h3 className="text-center mb-5 mt-5">NATURAL GLAM</h3>
         <h3 className="mb-3">Features</h3>
@@ -215,7 +215,7 @@ class Portfolio extends Component {
               <div className="col-md-4" key={index}>
                 <p className="feature-wrapper">{feature.text}</p>
               </div>
-            )
+            );
           })}
         </div>
         <div className="row mt-5">
@@ -224,10 +224,10 @@ class Portfolio extends Component {
               <div className="col-md-4" key={index}>
                 <img src={picture.url} className="service-image" />
               </div>
-            )
+            );
           })}
         </div>
-        <div id="paginator-ultimate-wrapper">
+        {/* <div id="paginator-ultimate-wrapper">
           <div id="paginator-wrapper">
             <button
               onClick={() => this.increaseNaturalGlamPaginate()}
@@ -245,7 +245,7 @@ class Portfolio extends Component {
               Prev
             </button>
           </div>
-        </div>
+        </div> */}
         <h3 className="text-center mb-5 mt-5">SOFT GLAM</h3>
         <h3 className="mb-3">Features</h3>
         <div className="row">
@@ -254,7 +254,7 @@ class Portfolio extends Component {
               <div className="col-md-4" key={index}>
                 <p className="feature-wrapper">{feature.text}</p>
               </div>
-            )
+            );
           })}
         </div>
         <div className="row mt-5">
@@ -263,10 +263,10 @@ class Portfolio extends Component {
               <div className="col-md-4" key={index}>
                 <img src={picture.url} className="service-image" />
               </div>
-            )
+            );
           })}
         </div>
-        <div id="paginator-ultimate-wrapper">
+        {/* <div id="paginator-ultimate-wrapper">
           <div id="paginator-wrapper">
             <button
               onClick={() => this.increaseSoftGlamPaginate()}
@@ -284,10 +284,10 @@ class Portfolio extends Component {
               Prev
             </button>
           </div>
-        </div>
+        </div> */}
       </Container>
-    )
+    );
   }
 }
 
-export default Portfolio
+export default Portfolio;

@@ -1,28 +1,52 @@
-import React, { Component } from 'react'
-import iconMapSmall from '../Assets/Images/icon-map-small.png'
-import iconPhoneSmall from '../Assets/Images/icon-phone-small.png'
-import iconEnvelopeSmall from '../Assets/Images/icon-envelope-small.png'
-import { Container, Form, Alert } from 'react-bootstrap'
+import React, { Component } from "react";
+import iconMapSmall from "../Assets/Images/icon-map-small.png";
+import iconPhoneSmall from "../Assets/Images/icon-phone-small.png";
+import iconEnvelopeSmall from "../Assets/Images/icon-envelope-small.png";
+import { Container, Form, Alert } from "react-bootstrap";
 
 class Footer extends Component {
   state = {
     messageDetails: {
-      name: '',
-      email: '',
-      customerNumber: '',
+      name: "",
+      email: "",
+      customerNumber: "",
     },
-  }
+  };
 
   updateSendMessageDetails = (e) => {
-    let messageDetails = this.state.messageDetails
-    let id = e.currentTarget.id
-    messageDetails[id] = e.currentTarget.value
-    this.setState({ messageDetails })
-  }
+    let messageDetails = this.state.messageDetails;
+    let id = e.currentTarget.id;
+    messageDetails[id] = e.currentTarget.value;
+    this.setState({ messageDetails });
+  };
   render() {
     return (
       <footer className="site-footer">
         <div className="container">
+          <div className="d-flex justify-content-center">
+            <div className="widget">
+              <h3 className="widget-title">Social Media</h3>
+              <div className="social-links">
+                <a href="#" className="mx-2">
+                  <i className="fa fa-twitter" />
+                </a>
+                <a
+                  href="https://instagram.com/bisbeautyuk?utm_medium=copy_link"
+                  target="_blank"
+                  className="mx-2"
+                >
+                  <i class="fa fa-instagram"></i>
+                </a>
+                <a
+                  href="https://instagram.com/bisbeautyuk?utm_medium=copy_link"
+                  target_type="blank"
+                  className="mx-2"
+                >
+                  <i class="fa fa-tiktok"></i>
+                </a>
+              </div>
+            </div>
+          </div>
           <div className="row">
             {/* <div className="col-md-3">
               <div className="widget contact-widget">
@@ -41,7 +65,8 @@ class Footer extends Component {
                 </div>
               </div>
             </div> */}
-            <div className="col-md-3">
+
+            {/* <div className="col-md-3">
               <div className="widget">
                 <h3 className="widget-title">Social Media</h3>
 
@@ -60,8 +85,8 @@ class Footer extends Component {
                   </a>
                 </div>
               </div>
-            </div>
-            <div className="col-md-6">
+            </div> */}
+            {/* <div className="col-md-6">
               <div className="widget">
                 <h3 className="widget-title">
                   Send us a message or a feedback
@@ -97,7 +122,7 @@ class Footer extends Component {
                   <button className="button large">Send message</button>
                 </form>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="colophon">
             <p>
@@ -107,8 +132,8 @@ class Footer extends Component {
           </div>
         </div>
       </footer>
-    )
+    );
   }
 }
 
-export default Footer
+export default Footer;

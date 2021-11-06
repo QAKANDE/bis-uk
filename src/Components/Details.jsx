@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class Details extends Component {
   state = {
@@ -9,13 +9,13 @@ class Details extends Component {
     next_page: undefined,
     nextButton: false,
     prevButton: true,
-  }
+  };
   paginator(items, current_page, per_page_items) {
     let page = current_page || 1,
       per_page = per_page_items || 10,
       offset = (page - 1) * per_page,
       paginatedItems = items.slice(offset).slice(0, per_page_items),
-      total_pages = Math.ceil(items.length / per_page)
+      total_pages = Math.ceil(items.length / per_page);
 
     return {
       page: page,
@@ -25,52 +25,52 @@ class Details extends Component {
       total: items.length,
       total_pages: total_pages,
       data: paginatedItems,
-    }
+    };
   }
 
   fetchAllDetails = async () => {
-    const id = this.props.match.params.id
+    const id = this.props.match.params.id;
     const response = await fetch(
       `http://localhost:3003/services/get-by-service/${id}`,
       {
-        method: 'GET',
+        method: "GET",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-      },
-    )
-    const details = await response.json()
-    const paginated = this.paginator(details.images, this.state.pageNumber, 3)
+      }
+    );
+    const details = await response.json();
+    const paginated = this.paginator(details.images, this.state.pageNumber, 3);
     this.setState({
       details: details,
       images: paginated.data,
       features: details.features,
       next_page: paginated.next_page,
-    })
-  }
+    });
+  };
   increasePaginate = () => {
     if (this.state.next_page === null) {
-      this.setState({ nextButton: true })
+      this.setState({ nextButton: true });
     } else if (this.state.next_page !== null || this.state.next_page >= 1) {
       this.setState({
         pageNumber: this.state.pageNumber + 1,
         prevButton: false,
-      })
+      });
     }
-    this.fetchAllDetails()
-  }
+    this.fetchAllDetails();
+  };
   decreasePaginate = () => {
     if (this.state.pageNumber === 1) {
-      this.setState({ prevButton: true })
+      this.setState({ prevButton: true });
     } else {
-      this.setState({ pageNumber: this.state.pageNumber - 1 })
+      this.setState({ pageNumber: this.state.pageNumber - 1 });
     }
-    this.fetchAllDetails()
-  }
+    this.fetchAllDetails();
+  };
 
   componentDidMount = async () => {
-    this.fetchAllDetails()
-  }
+    this.fetchAllDetails();
+  };
   render() {
     return (
       <>
@@ -87,27 +87,8 @@ class Details extends Component {
                     />
                   </div>
                 </div>
-              )
+              );
             })}
-          </div>
-          <div id="paginator-ultimate-wrapper">
-            <div id="paginator-wrapper">
-              <button
-                onClick={() => this.increasePaginate()}
-                disabled={this.state.nextButton}
-                className="paginator-buttons button large"
-              >
-                Next
-              </button>
-              <p>{this.state.pageNumber}</p>
-              <button
-                onClick={() => this.decreasePaginate()}
-                disabled={this.state.prevButton}
-                className="paginator-buttons button large"
-              >
-                Prev
-              </button>
-            </div>
           </div>
           <h5 className="section-title">Features</h5>
           <div className="row">
@@ -120,13 +101,13 @@ class Details extends Component {
                     </li>
                   </ul>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
       </>
-    )
+    );
   }
 }
 
-export default Details
+export default Details;
