@@ -27,9 +27,9 @@ class Footer extends Component {
             <div className="widget">
               <h3 className="widget-title">Social Media</h3>
               <div className="social-links">
-                <a href="#" className="mx-2">
+                {/* <a href="#" className="mx-2">
                   <i className="fa fa-twitter" />
-                </a>
+                </a> */}
                 <a
                   href="https://instagram.com/bisbeautyuk?utm_medium=copy_link"
                   target="_blank"
@@ -37,13 +37,13 @@ class Footer extends Component {
                 >
                   <i class="fa fa-instagram"></i>
                 </a>
-                <a
+                {/* <a
                   href="https://instagram.com/bisbeautyuk?utm_medium=copy_link"
                   target_type="blank"
                   className="mx-2"
                 >
                   <i class="fa fa-tiktok"></i>
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
@@ -126,8 +126,8 @@ class Footer extends Component {
           </div>
           <div className="colophon">
             <p>
-              Copyright 2021 BizBeautyUK. Designed by Quadri Omofolarin Akande.
-              All rights reserved.
+              Copyright 2021 BisBeautyUK. Designed by Quadri Akande. All rights
+              reserved.
             </p>
           </div>
         </div>
