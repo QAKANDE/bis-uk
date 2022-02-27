@@ -15,6 +15,15 @@
   justify-content: space-between;
 }
 
+#video-container {
+  background-color: #aea9ad;
+  margin-left: 0.5rem;
+}
+
+#bis-image {
+  width: 350px;
+}
+
 @media screen and (max-width: 700px) {
   #paginator-ultimate-wrapper {
     display: flex;
@@ -29,6 +38,9 @@
   }
 
   .service-image {
+    margin-top: 2rem;
+  }
+  #video-container {
     margin-top: 2rem;
   }
 }

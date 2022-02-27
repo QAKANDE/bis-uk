@@ -31,7 +31,7 @@ class Details extends Component {
   fetchAllDetails = async () => {
     const id = this.props.match.params.id;
     const response = await fetch(
-      `https://bisbeautyukbackend-t36ss.ondigitalocean.app/services/get-by-service/${id}`,
+      `https://bisbeautyukbackend-rqp7g.ondigitalocean.app/services/get-by-service/${id}`,
       {
         method: "GET",
         headers: {

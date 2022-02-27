@@ -43,6 +43,13 @@ class Footer extends Component {
                   className="mx-2"
                 >
                   <i class="fa fa-tiktok"></i>
+                </a>
+                <a
+                  href="https://instagram.com/bisbeautyuk?utm_medium=copy_link"
+                  target_type="blank"
+                  className="mx-2"
+                >
+                  <i className="fa fa-twitter" />
                 </a> */}
               </div>
             </div>
@@ -126,7 +133,7 @@ class Footer extends Component {
           </div>
           <div className="colophon">
             <p>
-              Copyright 2021 BisBeautyUK. Designed by Quadri Akande. All rights
+              Copyright 2022 BisBeautyUK. Designed by Quadri Akande. All rights
               reserved.
             </p>
           </div>

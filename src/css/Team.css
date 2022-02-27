@@ -1,0 +1,18 @@
+.team-container {
+  padding: 2rem 0 5rem 0;
+}
+
+#team-sub-container {
+  margin: 0;
+  top: 50%;
+}
+
+#team-holder {
+  display: flex;
+  justify-content: center;
+}
+
+#team-member {
+  margin-top: 2rem;
+  text-align: center;
+}

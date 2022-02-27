@@ -8,6 +8,7 @@ import Footer from "./Components/Footer";
 import Details from "./Components/Details";
 import Payment from "./Components/Payment";
 import PaymentSuccess from "./Components/PaymentSuccess";
+import Team from "./Components/Team";
 
 function App() {
   return (
@@ -16,11 +17,13 @@ function App() {
         <div id="site-content">
           <Router>
             <Navbar />
+            {/* <Team /> */}
             <Route path="/" exact component={Home} />
             <Route path="/portfolio" exact component={Portfolio} />
             <Route path="/bookus" exact component={BookUs} />
             <Route path="/details/:id" exact component={Details} />
             <Route path="/payment" exact component={Payment} />
+            <Route path="/team" exact component={Team} />
             <Route
               path="/payment-success/:name"
               exact

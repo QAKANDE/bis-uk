@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Card, CardDeck, CardGroup } from "react-bootstrap";
-import picture from "../Assets/girl.jpg";
+import vid from "../../src/Assets/IMG_1686.MOV";
 import "../css/Portfolio.css";
 
 class Portfolio extends Component {
@@ -27,6 +27,9 @@ class Portfolio extends Component {
     prevButtonNatural: true,
     nextButtonSoft: false,
     prevButtonSoft: true,
+    naturalGlamVideos: [],
+    fullGlamVideos: [],
+    softGlamVideos: [],
   };
 
   paginator(items, current_page, per_page_items) {
@@ -49,7 +52,7 @@ class Portfolio extends Component {
 
   fetchDetails = async () => {
     const response = await fetch(
-      "https://bisbeautyukbackend-t36ss.ondigitalocean.app/services/",
+      "https://bisbeautyukbackend-rqp7g.ondigitalocean.app/services/",
       {
         method: "GET",
         headers: {
@@ -97,81 +100,112 @@ class Portfolio extends Component {
     });
   };
 
+  fetchVideos = async () => {
+    const response = await fetch(
+      "https://bisbeautyukbackend-rqp7g.ondigitalocean.app/services/get-all-videos",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const videos = await response.json();
+    console.log(videos);
+
+    const fullGlamVideos = videos.data.filter(
+      (service) => service.serviceName === "Full glam"
+    );
+    const naturalGlamVideos = videos.data.filter(
+      (service) => service.serviceName === "Natural glam"
+    );
+    const softGlamVideos = videos.data.filter(
+      (service) => service.serviceName === "Soft glam"
+    );
+
+    this.setState({
+      naturalGlamVideos,
+      fullGlamVideos,
+      softGlamVideos,
+    });
+    console.log(this.state.naturalGlamVideos);
+  };
+
   componentDidMount = async () => {
     this.fetchDetails();
+    this.fetchVideos();
   };
-  increasePaginate = () => {
-    if (this.state.next_page_full_glam === null) {
-      this.setState({ nextButton: true });
-    } else if (
-      this.state.next_page_full_glam !== null ||
-      this.state.next_page_full_glam >= 1
-    ) {
-      this.setState({
-        pageNumber: this.state.pageNumber + 1,
-        prevButton: false,
-      });
-    }
-    this.fetchDetails();
-  };
-  decreasePaginate = () => {
-    if (this.state.pageNumber === 1) {
-      this.setState({ prevButton: true });
-    } else {
-      this.setState({ pageNumber: this.state.pageNumber - 1 });
-    }
-    this.fetchDetails();
-  };
-  increaseNaturalGlamPaginate = () => {
-    if (this.state.next_page_natural_glam === null) {
-      this.setState({ nextButtonNatural: true });
-    } else if (
-      this.state.next_page_natural_glam !== null ||
-      this.state.next_page_natural_glam >= 1
-    ) {
-      this.setState({
-        naturalPageNumber: this.state.naturalPageNumber + 1,
-        prevButtonNatural: false,
-      });
-    }
-    this.fetchDetails();
-  };
-  decreaseNaturalGlamPaginate = () => {
-    if (this.state.naturalPageNumber === 1) {
-      this.setState({ prevButtonNatural: true });
-    } else {
-      this.setState({ naturalPageNumber: this.state.naturalPageNumber - 1 });
-    }
-    this.fetchDetails();
-  };
-  increaseSoftGlamPaginate = () => {
-    if (this.state.next_page_soft_glam === null) {
-      this.setState({ nextButtonSoft: true });
-    } else if (
-      this.state.next_page_soft_glam !== null ||
-      this.state.next_page_soft_glam >= 1
-    ) {
-      this.setState({
-        softPageNumber: this.state.softPageNumber + 1,
-        prevButtonSoft: false,
-      });
-    }
-    this.fetchDetails();
-  };
-  decreaseSoftGlamPaginate = () => {
-    if (this.state.softPageNumber === 1) {
-      this.setState({ prevButtonSoft: true });
-    } else {
-      this.setState({ softPageNumber: this.state.softPageNumber - 1 });
-    }
-    this.fetchDetails();
-  };
+  // increasePaginate = () => {
+  //   if (this.state.next_page_full_glam === null) {
+  //     this.setState({ nextButton: true });
+  //   } else if (
+  //     this.state.next_page_full_glam !== null ||
+  //     this.state.next_page_full_glam >= 1
+  //   ) {
+  //     this.setState({
+  //       pageNumber: this.state.pageNumber + 1,
+  //       prevButton: false,
+  //     });
+  //   }
+  //   this.fetchDetails();
+  // };
+  // decreasePaginate = () => {
+  //   if (this.state.pageNumber === 1) {
+  //     this.setState({ prevButton: true });
+  //   } else {
+  //     this.setState({ pageNumber: this.state.pageNumber - 1 });
+  //   }
+  //   this.fetchDetails();
+  // };
+  // increaseNaturalGlamPaginate = () => {
+  //   if (this.state.next_page_natural_glam === null) {
+  //     this.setState({ nextButtonNatural: true });
+  //   } else if (
+  //     this.state.next_page_natural_glam !== null ||
+  //     this.state.next_page_natural_glam >= 1
+  //   ) {
+  //     this.setState({
+  //       naturalPageNumber: this.state.naturalPageNumber + 1,
+  //       prevButtonNatural: false,
+  //     });
+  //   }
+  //   this.fetchDetails();
+  // };
+  // decreaseNaturalGlamPaginate = () => {
+  //   if (this.state.naturalPageNumber === 1) {
+  //     this.setState({ prevButtonNatural: true });
+  //   } else {
+  //     this.setState({ naturalPageNumber: this.state.naturalPageNumber - 1 });
+  //   }
+  //   this.fetchDetails();
+  // };
+  // increaseSoftGlamPaginate = () => {
+  //   if (this.state.next_page_soft_glam === null) {
+  //     this.setState({ nextButtonSoft: true });
+  //   } else if (
+  //     this.state.next_page_soft_glam !== null ||
+  //     this.state.next_page_soft_glam >= 1
+  //   ) {
+  //     this.setState({
+  //       softPageNumber: this.state.softPageNumber + 1,
+  //       prevButtonSoft: false,
+  //     });
+  //   }
+  //   this.fetchDetails();
+  // };
+  // decreaseSoftGlamPaginate = () => {
+  //   if (this.state.softPageNumber === 1) {
+  //     this.setState({ prevButtonSoft: true });
+  //   } else {
+  //     this.setState({ softPageNumber: this.state.softPageNumber - 1 });
+  //   }
+  //   this.fetchDetails();
+  // };
   render() {
     return (
       <Container className="mb-5 mt-5">
         <h2 className="section-title">Previous works</h2>
         <h3 className="text-center mb-5">FULL GLAM</h3>
-        <h3 className="mb-3">Features</h3>
         <div className="row">
           {this.state.fullGlamFeatures.map((feature, index) => {
             return (
@@ -187,6 +221,23 @@ class Portfolio extends Component {
               <div className="col-md-4" key={index}>
                 <img src={picture.url} className="service-image" />
               </div>
+            );
+          })}
+        </div>
+        <div className="row mt-5">
+          {this.state.fullGlamVideos.map((picture, index) => {
+            return (
+              <video
+                width="370"
+                height="466"
+                controls
+                muted
+                id="video-container"
+              >
+                <source src={picture.url} type="video/mp4" />
+                <source src={picture.url} type="video/ogg" />
+                Your browser doesddd not support the video tag.
+              </video>
             );
           })}
         </div>
@@ -211,7 +262,7 @@ class Portfolio extends Component {
         </div> */}
 
         <h3 className="text-center mb-5 mt-5">NATURAL GLAM</h3>
-        <h3 className="mb-3">Features</h3>
+
         <div className="row">
           {this.state.naturalGlamFeatures.map((feature, index) => {
             return (
@@ -230,27 +281,24 @@ class Portfolio extends Component {
             );
           })}
         </div>
-        {/* <div id="paginator-ultimate-wrapper">
-          <div id="paginator-wrapper">
-            <button
-              onClick={() => this.increaseNaturalGlamPaginate()}
-              disabled={this.state.nextButtonNatural}
-              className="paginator-buttons button large"
-            >
-              Next
-            </button>
-            <p>{this.state.naturalPageNumber}</p>
-            <button
-              onClick={() => this.decreaseNaturalGlamPaginate()}
-              disabled={this.state.prevButtonNatural}
-              className="paginator-buttons button large"
-            >
-              Prev
-            </button>
-          </div>
-        </div> */}
+        <div className="row mt-5">
+          {this.state.naturalGlamVideos.map((picture, index) => {
+            return (
+              <video
+                width="370"
+                height="466"
+                controls
+                muted
+                id="video-container"
+              >
+                <source src={picture.url} type="video/mp4" />
+                <source src={picture.url} type="video/ogg" />
+                Your browser doesddd not support the video tag.
+              </video>
+            );
+          })}
+        </div>
         <h3 className="text-center mb-5 mt-5">SOFT GLAM</h3>
-        <h3 className="mb-3">Features</h3>
         <div className="row">
           {this.state.softGlamFeatures.map((feature, index) => {
             return (
@@ -269,25 +317,23 @@ class Portfolio extends Component {
             );
           })}
         </div>
-        {/* <div id="paginator-ultimate-wrapper">
-          <div id="paginator-wrapper">
-            <button
-              onClick={() => this.increaseSoftGlamPaginate()}
-              disabled={this.state.nextButtonSoft}
-              className="paginator-buttons button large"
-            >
-              Next
-            </button>
-            <p>{this.state.softPageNumber}</p>
-            <button
-              onClick={() => this.decreaseSoftGlamPaginate()}
-              disabled={this.state.prevButtonSoft}
-              className="paginator-buttons button large"
-            >
-              Prev
-            </button>
-          </div>
-        </div> */}
+        <div className="row mt-5">
+          {this.state.softGlamVideos.map((picture, index) => {
+            return (
+              <video
+                width="370"
+                height="466"
+                controls
+                muted
+                id="video-container"
+              >
+                <source src={picture.url} type="video/mp4" />
+                <source src={picture.url} type="video/ogg" />
+                Your browser doesddd not support the video tag.
+              </video>
+            );
+          })}
+        </div>
       </Container>
     );
   }

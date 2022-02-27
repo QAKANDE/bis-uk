@@ -17,7 +17,7 @@ class Carou extends Component {
 
   componentDidMount = async () => {
     const response = await fetch(
-      "https://bisbeautyukbackend-t36ss.ondigitalocean.app/services/get-all-images",
+      "https://bisbeautyukbackend-rqp7g.ondigitalocean.app/services/get-all-images",
       {
         method: "GET",
         headers: {

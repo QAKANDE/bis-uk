@@ -10,7 +10,7 @@ class Services extends Component {
 
   componentDidMount = async () => {
     const response = await fetch(
-      "https://bisbeautyukbackend-t36ss.ondigitalocean.app/services/",
+      "https://bisbeautyukbackend-rqp7g.ondigitalocean.app/services/",
       {
         method: "GET",
         headers: {
