@@ -111,7 +111,6 @@ class Portfolio extends Component {
       }
     );
     const videos = await response.json();
-    console.log(videos);
 
     const fullGlamVideos = videos.data.filter(
       (service) => service.serviceName === "Full glam"
@@ -204,7 +203,7 @@ class Portfolio extends Component {
   render() {
     return (
       <Container className="mb-5 mt-5">
-        <h2 className="section-title">Previous works</h2>
+        <h2 className="section-title">Previous work</h2>
         <h3 className="text-center mb-5">FULL GLAM</h3>
         <div className="row">
           {this.state.fullGlamFeatures.map((feature, index) => {
@@ -230,7 +229,8 @@ class Portfolio extends Component {
               <video
                 width="370"
                 height="466"
-                controls
+                autoplay="autoplay"
+                loop="loop"
                 muted
                 id="video-container"
               >
@@ -287,7 +287,8 @@ class Portfolio extends Component {
               <video
                 width="370"
                 height="466"
-                controls
+                autoplay="autoplay"
+                loop="loop"
                 muted
                 id="video-container"
               >
@@ -323,7 +324,8 @@ class Portfolio extends Component {
               <video
                 width="370"
                 height="466"
-                controls
+                autoplay="autoplay"
+                loop="loop"
                 muted
                 id="video-container"
               >

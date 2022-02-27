@@ -19,16 +19,24 @@ class Navbar extends Component {
               <div className="d-flex flex-row shop-menu clearfix pull-right">
                 <ul>
                   <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/" className="navbar-links">
+                      Home
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/portfolio">Portfolio</Link>
+                    <Link to="/portfolio" className="navbar-links">
+                      Portfolio
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/bookus">Book us</Link>
+                    <Link to="/bookus" className="navbar-links">
+                      Book us
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/team">Who we are</Link>
+                    <Link to="/team" className="navbar-links">
+                      Who we are
+                    </Link>
                   </li>
                 </ul>
               </div>

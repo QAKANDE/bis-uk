@@ -16,6 +16,7 @@ class BookUs extends Component {
     setMeeting: true,
     errorInForm: false,
     noServiceSelected: false,
+    url: "",
   };
 
   updateBookingDetails = (event) => {
@@ -45,7 +46,22 @@ class BookUs extends Component {
         this.setState({ errorInForm: false });
       }, 1200);
     } else {
-      const url = "https://calendly.com/bpolufade/60min";
+      if (this.state.service === "natural_glam") {
+        await this.setState({
+          url: "https://calendly.com/bpolufade/60min",
+        });
+      }
+      if (this.state.service === "full_glam") {
+        await this.setState({
+          url: "https://calendly.com/bpolufade/15min",
+        });
+      }
+      if (this.state.service === "soft_glam") {
+        await this.setState({
+          url: "https://calendly.com/bpolufade/30min",
+        });
+      }
+
       const styles = {
         height: "1000px",
       };
@@ -74,6 +90,9 @@ class BookUs extends Component {
             this.state.bookingDetails.additionalInfo,
         },
       };
+      const url = this.state.url;
+      console.log("test:", url);
+
       openPopupWidget({ url, prefill, pageSettings });
       function isCalendlyEvent(e) {
         return e.data.event && e.data.event.indexOf("calendly") === 0;
