@@ -19,6 +19,9 @@
   background-color: #aea9ad;
   margin-left: 0.5rem;
 }
+video::-webkit-media-controls-mute-button {
+  display: none;
+}
 
 #bis-image {
   width: 350px;

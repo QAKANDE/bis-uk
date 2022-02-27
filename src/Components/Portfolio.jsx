@@ -229,14 +229,11 @@ class Portfolio extends Component {
               <video
                 width="370"
                 height="466"
-                autoplay="autoplay"
-                loop="loop"
                 muted
+                controls
                 id="video-container"
               >
                 <source src={picture.url} type="video/mp4" />
-                <source src={picture.url} type="video/ogg" />
-                Your browser doesddd not support the video tag.
               </video>
             );
           })}
@@ -287,14 +284,11 @@ class Portfolio extends Component {
               <video
                 width="370"
                 height="466"
-                autoplay="autoplay"
-                loop="loop"
                 muted
+                controls
                 id="video-container"
               >
                 <source src={picture.url} type="video/mp4" />
-                <source src={picture.url} type="video/ogg" />
-                Your browser doesddd not support the video tag.
               </video>
             );
           })}
@@ -321,18 +315,17 @@ class Portfolio extends Component {
         <div className="row mt-5">
           {this.state.softGlamVideos.map((picture, index) => {
             return (
-              <video
-                width="370"
-                height="466"
-                autoplay="autoplay"
-                loop="loop"
-                muted
-                id="video-container"
-              >
-                <source src={picture.url} type="video/mp4" />
-                <source src={picture.url} type="video/ogg" />
-                Your browser doesddd not support the video tag.
-              </video>
+              <div>
+                <video
+                  width="370"
+                  height="466"
+                  muted
+                  controls
+                  id="video-container"
+                >
+                  <source src={picture.url} type="video/mp4" />
+                </video>
+              </div>
             );
           })}
         </div>
