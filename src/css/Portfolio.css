@@ -19,9 +19,22 @@
   background-color: #aea9ad;
   margin-left: 0.5rem;
 }
-video::-webkit-media-controls-mute-button {
-  display: none;
+#video-container video::-webkit-media-controls-mute-button {
+  display: none !important;
 }
+
+#video-container video::--webkit-media-controls-mute-button {
+  display: none !important;
+}
+
+video::--webkit-media-controls-mute-button {
+  display: none !important;
+}
+video::-webkit-media-controls-mute-button {
+  display: none !important;
+}
+
+
 
 #bis-image {
   width: 350px;
