@@ -1,8 +1,14 @@
 #drop-down-form {
-    background-color: #1b181b;
-    color: #c0c0c0;
-    width: 30%;
-    height: 30%;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+  background-color: transparent;
+  color: #787377;
+  width: 30%;
+  height: 30%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 500px) {
+  #drop-down-form {
+    width: 50%;
+  }
 }

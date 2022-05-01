@@ -253,7 +253,7 @@ table {
 }
 
 .App {
-  background-color: #151215;
+  background-color: white;
   color: #aea9ad;
   font-size: 16px;
   font-weight: 400;
@@ -269,7 +269,7 @@ p {
 }
 
 .feature-wrapper {
-  background-color: #1b181b;
+  background-color: transparent;
   margin-right: 0.3rem;
   padding-bottom: 0.2rem;
   padding-top: 0.2rem;
@@ -278,6 +278,8 @@ p {
   text-align: center;
   width: auto;
   font-family: "Montserrat", sans-serif;
+  border: 2px solid #787377;
+  color: #787377;
 }
 
 .text-center {
@@ -316,10 +318,10 @@ form textarea {
 .button {
   padding: 10px 20px;
   margin-bottom: 30px;
-  border: 2px solid #cc7250;
+  border: 2px solid #787377;
   position: relative;
-  color: #cc7250;
-  background-color: #2c282c;
+  color: #787377;
+  background-color: transparent;
   font-weight: 600;
   font-size: 12px;
   font-size: 0.75rem;
@@ -328,7 +330,7 @@ form textarea {
   transition: 0.3s ease;
 }
 
-.button:hover {
+/* .button:hover {
   color: #f7d0c2;
   border-color: #f7d0c2;
 }
@@ -341,7 +343,7 @@ form textarea {
 .button.no-gradient:hover {
   border-color: #cc7250;
   color: #cc7250;
-}
+} */
 
 .button.large {
   padding: 20px 30px;
@@ -380,10 +382,11 @@ form textarea {
   text-transform: uppercase;
   font-weight: 300;
   font-family: "Montserrat", sans-serif;
-  background-image: -webkit-linear-gradient(90deg, #cc7250, #f7d0c2);
+  background-image: -webkit-linear-gradient(90deg, #787377, #787377);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 20px;
+  color: #787377;
 }
 
 @media screen and (max-width: 500px) {
@@ -391,7 +394,9 @@ form textarea {
     font-size: 20px;
   }
   .section-title {
-    font-size: 20px;
+    font-size: 23px;
+    margin-top: 3rem;
+    font-weight: 900;
   }
 }
 

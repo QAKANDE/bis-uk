@@ -16,7 +16,7 @@
 }
 
 #video-container {
-  background-color: #aea9ad;
+  /* background-color: #aea9ad; */
   margin-left: 0.5rem;
 }
 #video-container video::-webkit-media-controls-mute-button {

@@ -35,7 +35,6 @@ class Carou extends Component {
                     width: "100%",
                     height: "95vh",
                     objectFit: "cover",
-                    opacity: "0.4",
                   }}
                 />
                 <Carousel.Caption>
