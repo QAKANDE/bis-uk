@@ -9,15 +9,12 @@ class Services extends Component {
   };
 
   componentDidMount = async () => {
-    const response = await fetch(
-      "https://bisbeautyukbackend-rqp7g.ondigitalocean.app/services/",
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch("http://localhost:3003/services/", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const services = await response.json();
     this.setState({
       services,
@@ -45,16 +42,12 @@ class Services extends Component {
                     <Row>
                       <Col>
                         <Link to={"/details/" + service._id}>
-                          <button className="button large mt-2">
-                            See more
-                          </button>
+                          <button className="button mt-2">See more</button>
                         </Link>
                       </Col>
                       <Col>
                         <Link to={"/bookus/"}>
-                          <button className="button large mt-2">
-                            Book now
-                          </button>
+                          <button className="button  mt-2">Book now</button>
                         </Link>
                       </Col>
                     </Row>

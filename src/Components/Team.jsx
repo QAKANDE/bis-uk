@@ -16,17 +16,21 @@ class Team extends Component {
             <img src={this.state.url} id="bis-image" />
           </div>
           <h3 id="team-member">Bisola. O</h3>
-          <p id="team-member">
+          <p id="team-member" className="more-info-text">
             You look beautiful when you feel beautiful. I believe my work is to
             help women by enhancing their individual beauty.
           </p>
-          <p id="team-member">
+          <p id="team-member" className="more-info-text">
             I love art and I have found that the best way to express my art is
             through make up. I hope you love what you see and I can't wait to
             slay your face!
           </p>
-          <p id="team-member">With Love,</p>
-          <p id="team-member">Bis x</p>
+          <p id="team-member" className="more-info-text">
+            With Love,
+          </p>
+          <p id="team-member" className="more-info-text">
+            Bis x
+          </p>
           <div className="team">
             {/* <div class="social-links">
                   <a href="#">

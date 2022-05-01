@@ -1,7 +1,19 @@
 .service-image {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .service-image:hover {
-    opacity: 1;
+  opacity: 1;
+}
+
+@media screen and (max-width: 500px) {
+  .feature-image {
+    height: 300px;
+  }
+  .more-info-text {
+    font-size: 14px;
+  }
+  .row {
+    display: flex;
+  }
 }

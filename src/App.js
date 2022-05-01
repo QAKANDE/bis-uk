@@ -1,4 +1,5 @@
 import "./App.css";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
@@ -9,8 +10,10 @@ import Details from "./Components/Details";
 import Payment from "./Components/Payment";
 import PaymentSuccess from "./Components/PaymentSuccess";
 import Team from "./Components/Team";
+import Videos from "./Components/Videos";
 
 function App() {
+  const [videos, setVideos] = useState();
   return (
     <div className="App">
       <div className="homepage header-collapse">
@@ -24,6 +27,7 @@ function App() {
             <Route path="/details/:id" exact component={Details} />
             <Route path="/payment" exact component={Payment} />
             <Route path="/team" exact component={Team} />
+            <Route path="/videos" exact component={Videos} />
             <Route
               path="/payment-success/:name"
               exact

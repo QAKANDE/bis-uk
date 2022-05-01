@@ -30,3 +30,56 @@
 .navbar-links:hover {
   text-decoration: none !important;
 }
+
+.mobile-nav {
+  color: white !important;
+}
+
+#mobile-all-wrapper {
+  display: none !important;
+}
+
+@media screen and (max-width: 500px) {
+  .dt-menu {
+    display: none !important;
+  }
+  #mobile-all-wrapper {
+    display: block !important;
+  }
+
+  .mobile-menu-wrapper {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 0rem 0.5rem 0rem;
+  }
+
+  #mobile-logo {
+    width: 25%;
+  }
+  #open-icon-wrapper {
+    margin-top: 0.3rem;
+  }
+  #open-icon {
+    width: 60%;
+  }
+
+  #mw-menu {
+    background-color: #f8f8ff;
+  }
+  .hide-mobile-inner {
+    display: none;
+  }
+  .mobile-inner {
+    display: flex;
+    justify-content: center;
+    background-color: #f8f8ff;
+    position: absolute;
+    z-index: 1;
+    left: -1px;
+    right: 0px;
+    background-color: #151215;
+  }
+  #mobile-2nd-inner {
+    padding: 2rem 0rem 2rem 0rem;
+  }
+}

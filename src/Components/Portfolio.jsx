@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Container, Card, CardDeck, CardGroup } from "react-bootstrap";
-import vid from "../../src/Assets/IMG_1686.MOV";
+import { Container } from "react-bootstrap";
+
 import "../css/Portfolio.css";
 
 class Portfolio extends Component {
@@ -51,15 +51,12 @@ class Portfolio extends Component {
   }
 
   fetchDetails = async () => {
-    const response = await fetch(
-      "https://bisbeautyukbackend-rqp7g.ondigitalocean.app/services/",
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch("http://localhost:3003/services/", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const services = await response.json();
 
     const fullGlam = services.filter(
@@ -99,10 +96,9 @@ class Portfolio extends Component {
       next_page_natural_glam: paginateNaturalGlam.next_page,
     });
   };
-
   fetchVideos = async () => {
     const response = await fetch(
-      "https://bisbeautyukbackend-rqp7g.ondigitalocean.app/services/get-all-videos",
+      "http://localhost:3003/services/get-all-videos",
       {
         method: "GET",
         headers: {
@@ -127,7 +123,6 @@ class Portfolio extends Component {
       fullGlamVideos,
       softGlamVideos,
     });
-    console.log(this.state.naturalGlamVideos);
   };
 
   componentDidMount = async () => {
@@ -203,8 +198,8 @@ class Portfolio extends Component {
   render() {
     return (
       <Container className="mb-5 mt-5">
-        <h2 className="section-title">Previous work</h2>
-        <h3 className="text-center mb-5">FULL GLAM</h3>
+        {/* <h2 className="section-title">Previous work</h2> */}
+        <h3 className="text-center mb-5 section-title">FULL GLAM</h3>
         <div className="row">
           {this.state.fullGlamFeatures.map((feature, index) => {
             return (
@@ -217,49 +212,34 @@ class Portfolio extends Component {
         <div className="row mt-5">
           {this.state.fullGlamImages.map((picture, index) => {
             return (
-              <div className="col-md-4" key={index}>
+              <div className="col-md-4 portfolio-image" key={index}>
                 <img src={picture.url} className="service-image" />
               </div>
             );
           })}
-        </div>
-        <div className="row mt-5">
-          {this.state.fullGlamVideos.map((picture, index) => {
-            return (
-              <video
-                width="370"
-                height="466"
-                muted
-                controls
-                id="video-container"
-              >
-                <source src={picture.url} type="video/mp4" />
-              </video>
-            );
-          })}
-        </div>
-        {/* <div id="paginator-ultimate-wrapper">
-          <div id="paginator-wrapper">
-            <button
-              onClick={() => this.increasePaginate()}
-              disabled={this.state.nextButton}
-              className="paginator-buttons button large"
-            >
-              Next
-            </button>
-            <p>{this.state.pageNumber}</p>
-            <button
-              onClick={() => this.decreasePaginate()}
-              disabled={this.state.prevButton}
-              className="paginator-buttons button large"
-            >
-              Prev
-            </button>
+          <div className="row video-row">
+            {this.state.fullGlamVideos.map((picture, index) => {
+              return (
+                <div className="portfolio-image">
+                  <video
+                    width="240"
+                    height="320"
+                    loop
+                    muted
+                    controls
+                    defaultMuted
+                    nodownload
+                    id="video-container"
+                  >
+                    <source src={picture.url} type="video/mp4" />
+                  </video>
+                </div>
+              );
+            })}
           </div>
-        </div> */}
+        </div>
 
-        <h3 className="text-center mb-5 mt-5">NATURAL GLAM</h3>
-
+        <h3 className="text-center mb-5 section-title">NATURAL GLAM</h3>
         <div className="row">
           {this.state.naturalGlamFeatures.map((feature, index) => {
             return (
@@ -272,28 +252,35 @@ class Portfolio extends Component {
         <div className="row mt-5">
           {this.state.naturalGlamImages.map((picture, index) => {
             return (
-              <div className="col-md-4" key={index}>
+              <div className="col-md-4 portfolio-image" key={index}>
                 <img src={picture.url} className="service-image" />
               </div>
             );
           })}
         </div>
-        <div className="row mt-5">
+
+        <div className="row video-row ">
           {this.state.naturalGlamVideos.map((picture, index) => {
             return (
-              <video
-                width="370"
-                height="466"
-                muted
-                controls
-                id="video-container"
-              >
-                <source src={picture.url} type="video/mp4" />
-              </video>
+              <div className="portfolio-image">
+                <video
+                  width="240"
+                  height="320"
+                  loop
+                  muted
+                  controls
+                  defaultMuted
+                  nodownload
+                  id="video-container"
+                >
+                  <source src={picture.url} type="video/mp4" />
+                </video>
+              </div>
             );
           })}
         </div>
-        <h3 className="text-center mb-5 mt-5">SOFT GLAM</h3>
+
+        <h3 className="text-center mb-5 section-title">SOFT GLAM</h3>
         <div className="row">
           {this.state.softGlamFeatures.map((feature, index) => {
             return (
@@ -303,24 +290,27 @@ class Portfolio extends Component {
             );
           })}
         </div>
-        <div className="row mt-5">
+        <div className="row  mt-5">
           {this.state.softGlamImages.map((picture, index) => {
             return (
-              <div className="col-md-4" key={index}>
+              <div className="col-md-4 portfolio-image" key={index}>
                 <img src={picture.url} className="service-image" />
               </div>
             );
           })}
         </div>
-        <div className="row mt-5">
+        <div className="row video-row mt-5">
           {this.state.softGlamVideos.map((picture, index) => {
             return (
-              <div>
+              <div className="portfolio-image">
                 <video
-                  width="370"
-                  height="466"
+                  width="240"
+                  height="320"
+                  loop
                   muted
                   controls
+                  defaultMuted
+                  nodownload
                   id="video-container"
                 >
                   <source src={picture.url} type="video/mp4" />

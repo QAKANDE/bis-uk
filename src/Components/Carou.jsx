@@ -1,14 +1,6 @@
 import React, { Component } from "react";
 import { Carousel } from "react-bootstrap";
-import picture from "../Assets/IMG_1684.jpg";
-import picture2 from "../Assets/IMG_1683.jpg";
-import picture3 from "../Assets/IMG_1692.jpg";
-import picture4 from "../Assets/IMG_1685.jpg";
-import picture5 from "../Assets/IMG_1694.jpg";
-import picture6 from "../Assets/IMG_1696.jpg";
-import picture7 from "../Assets/IMG_1697.jpg";
-import picture8 from "../Assets/IMG_1698.jpg";
-import picture9 from "../Assets/IMG_1687.jpg";
+import "../css/Carousel.css";
 
 class Carou extends Component {
   state = {
@@ -17,7 +9,7 @@ class Carou extends Component {
 
   componentDidMount = async () => {
     const response = await fetch(
-      "https://bisbeautyukbackend-rqp7g.ondigitalocean.app/services/get-all-images",
+      "http://localhost:3003/services/get-all-images",
       {
         method: "GET",
         headers: {

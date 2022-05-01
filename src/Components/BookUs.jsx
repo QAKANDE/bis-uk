@@ -110,8 +110,10 @@ class BookUs extends Component {
   render() {
     return (
       <>
-        <Container>
-          <h2 className="section-title">Book an appointment</h2>
+        <Container className="mb-5 mt-5">
+          <h3 className="text-center mb-5 section-title">
+            BOOK AN APPOINTMENT
+          </h3>
           <form className="subscribe-form">
             <div className="d-flex justify-content-center mb-4 mt-5">
               <label for="services">Select a service</label>
