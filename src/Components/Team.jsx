@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import person1 from "../Assets/Images/person-1.jpg";
+import { Container } from "react-bootstrap";
 import "../css/Team.css";
 
 class Team extends Component {
@@ -16,21 +16,30 @@ class Team extends Component {
             <img src={this.state.url} id="bis-image" />
           </div>
           <h3 id="team-member">Bisola. O</h3>
-          <p id="team-member" className="more-info-text">
-            You look beautiful when you feel beautiful. I believe my work is to
-            help women by enhancing their individual beauty.
-          </p>
-          <p id="team-member" className="more-info-text">
-            I love art and I have found that the best way to express my art is
-            through make up. I hope you love what you see and I can't wait to
-            slay your face!
-          </p>
-          <p id="team-member" className="more-info-text">
-            With Love,
-          </p>
-          <p id="team-member" className="more-info-text">
-            Bis x
-          </p>
+          <Container>
+            <p id="team-member" className="more-info-text">
+              "You look beautiful when you feel beautiful" this is one of the
+              many quotes I live by. I believe my work is to help women by
+              enhancing their individual unique beauty
+            </p>
+            <p id="team-member" className="more-info-text">
+              I have always been passionate about art and i’ve found that the
+              best way I am able to express that is through makeup. Every time I
+              hand a client the mirror, it never fails that their face lights up
+              with joy. It’s very important that everyone leaves feeling
+              comfortable and confident.
+            </p>
+            <p id="team-member" className="more-info-text">
+              I highly appreciate your interest in booking our services. I hope
+              you love what you see & I can’t wait to meet you all!
+            </p>
+            <p id="team-member" className="more-info-text">
+              With Love,
+            </p>
+            <p id="team-member" className="more-info-text">
+              Bis x
+            </p>
+          </Container>
           <div className="team">
             {/* <div class="social-links">
                   <a href="#">

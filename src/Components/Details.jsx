@@ -92,14 +92,10 @@ class Details extends Component {
           </div>
           <h5 className="section-title">Features</h5>
           <div className="row">
-            {this.state.features.map((feature) => {
+            {this.state.features.map((feature, index) => {
               return (
-                <div className="col-md-4">
-                  <ul>
-                    <li>
-                      <p> {feature.text}</p>
-                    </li>
-                  </ul>
+                <div className="col-md-4" key={index}>
+                  <p className="feature-wrapper">{feature.text}</p>
                 </div>
               );
             })}
