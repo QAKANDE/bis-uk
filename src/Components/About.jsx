@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import figure1 from "../Assets/Images/bisbeautyylogo.jpg";
+import figure1 from "../Assets/bisbeauty-white-logo2.png";
 import "../css/Services.css";
 
 class About extends Component {
@@ -10,12 +10,12 @@ class About extends Component {
         <div className="container">
           <h2 className="section-title">Information</h2>
           <div className="row">
-            <div className="col-md-4">
+            {/* <div className="col-md-4">
               <figure>
                 <img src={figure1} />
               </figure>
-            </div>
-            <div className="col-md-8 mt-5">
+            </div> */}
+            <div className="col-md-8">
               <ul>
                 <li className="mb-3 more-info-text">
                   To ensure a flawless face beat, please ensure your eyebrows
