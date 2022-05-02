@@ -33,7 +33,7 @@ class Carou extends Component {
                   alt="First slide"
                   style={{
                     width: "100%",
-                    height: "95vh",
+                    height: "75vh",
                     objectFit: "cover",
                   }}
                 />
