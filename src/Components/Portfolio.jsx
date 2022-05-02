@@ -51,12 +51,15 @@ class Portfolio extends Component {
   }
 
   fetchDetails = async () => {
-    const response = await fetch("http://localhost:3003/services/", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      "https://my-app-jqli3.ondigitalocean.app/services/",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const services = await response.json();
 
     const fullGlam = services.filter(
@@ -98,7 +101,7 @@ class Portfolio extends Component {
   };
   fetchVideos = async () => {
     const response = await fetch(
-      "http://localhost:3003/services/get-all-videos",
+      "https://my-app-jqli3.ondigitalocean.app/services/get-all-videos",
       {
         method: "GET",
         headers: {

@@ -9,7 +9,7 @@ class Carou extends Component {
 
   componentDidMount = async () => {
     const response = await fetch(
-      "http://localhost:3003/services/get-all-images",
+      "https://my-app-jqli3.ondigitalocean.app/services/get-all-images",
       {
         method: "GET",
         headers: {

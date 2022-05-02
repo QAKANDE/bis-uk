@@ -9,7 +9,7 @@ class Videos extends React.Component {
   };
   fetchVideos = async () => {
     const response = await fetch(
-      "http://localhost:3003/services/get-all-videos",
+      "https://my-app-jqli3.ondigitalocean.app/services/get-all-videos",
       {
         method: "GET",
         headers: {

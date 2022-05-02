@@ -31,7 +31,7 @@ class Details extends Component {
   fetchAllDetails = async () => {
     const id = this.props.match.params.id;
     const response = await fetch(
-      `http://localhost:3003/services/get-by-service/${id}`,
+      `https://my-app-jqli3.ondigitalocean.app/services/get-by-service/${id}`,
       {
         method: "GET",
         headers: {
