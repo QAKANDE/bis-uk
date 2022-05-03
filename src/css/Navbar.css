@@ -39,6 +39,11 @@
   display: none !important;
 }
 
+#tooltip {
+  background-color: #cc7250;
+  border-radius: 25px;
+}
+
 @media screen and (max-width: 500px) {
   .dt-menu {
     display: none !important;
@@ -64,7 +69,7 @@
   }
 
   #mw-menu {
-    background-color: #f8f8ff;
+    background-color: #1b181b !important;
   }
   .hide-mobile-inner {
     display: none;
@@ -82,5 +87,6 @@
   #mobile-2nd-inner {
     padding: 2rem 0rem 2rem 0rem;
     color: #787377;
+    text-align: center;
   }
 }

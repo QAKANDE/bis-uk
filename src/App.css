@@ -32,6 +32,7 @@ template {
 .App {
   margin: 0;
   font-family: "Montserrat", sans-serif;
+  background-color: #1b181b !important;
 }
 
 a {
@@ -253,7 +254,8 @@ table {
 }
 
 .App {
-  background-color: white;
+  /* background-color: #1b181b !important; */
+  background-color: #2c282c !important;
   color: #aea9ad;
   font-size: 16px;
   font-weight: 400;
@@ -278,7 +280,7 @@ p {
   text-align: center;
   width: auto;
   font-family: "Montserrat", sans-serif;
-  border: 2px solid #787377;
+  /* border: 2px solid #787377; */
   color: #787377;
 }
 
@@ -309,7 +311,7 @@ form textarea {
   text-align: center;
   font-size: 38px;
   text-transform: uppercase;
-  color: #787377;
+  color: white;
   margin: 0 0 50px;
   font-weight: 300;
   font-family: "Montserrat", sans-serif;
@@ -318,9 +320,9 @@ form textarea {
 .button {
   padding: 10px 20px;
   margin-bottom: 30px;
-  border: 2px solid #787377;
+  border: 2px solid #cc7250;
   position: relative;
-  color: #787377;
+  color: white;
   background-color: transparent;
   font-weight: 600;
   font-size: 12px;
@@ -328,6 +330,8 @@ form textarea {
   text-transform: uppercase;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
+  /* 
+  background-image: -webkit-linear-gradient(90deg, #cc7250, #f7d0c2); */
 }
 
 /* .button:hover {
@@ -392,6 +396,9 @@ form textarea {
 @media screen and (max-width: 500px) {
   .feature .feature-title {
     font-size: 20px;
+  }
+  .feature-wrapper {
+    margin-bottom: 0 !important;
   }
   .section-title {
     font-size: 23px;

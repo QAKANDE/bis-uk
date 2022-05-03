@@ -54,6 +54,11 @@ class Navbar extends Component {
                         Who we are
                       </Link>
                     </li>
+                    <li>
+                      <Link to="/team" className="navbar-links">
+                        Make up products
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -95,9 +100,17 @@ class Navbar extends Component {
               <p onClick={() => this.setMobile()}>
                 <Link to="/team">Who we are</Link>
               </p>
+              <p onClick={() => this.setMobile()}>
+                <Link to="/coming-soon">
+                  Products available to purchase soon
+                </Link>
+              </p>
             </div>
           </div>
         </div>
+        {/* <div className="d-flex justify-content-center" id="tooltip">
+          Make up products on the way
+        </div> */}
       </>
     );
   }

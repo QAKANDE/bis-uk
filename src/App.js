@@ -11,6 +11,7 @@ import Payment from "./Components/Payment";
 import PaymentSuccess from "./Components/PaymentSuccess";
 import Team from "./Components/Team";
 import Videos from "./Components/Videos";
+import ComingSoon from "./Components/ComingSoon";
 
 function App() {
   const [videos, setVideos] = useState();
@@ -28,6 +29,7 @@ function App() {
             <Route path="/payment" exact component={Payment} />
             <Route path="/team" exact component={Team} />
             <Route path="/videos" exact component={Videos} />
+            <Route path="/coming-soon" exact component={ComingSoon} />
             <Route
               path="/payment-success/:name"
               exact

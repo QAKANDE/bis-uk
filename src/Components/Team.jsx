@@ -18,20 +18,18 @@ class Team extends Component {
           <h3 id="team-member">Bisola. O</h3>
           <Container>
             <p id="team-member" className="more-info-text">
-              "You look beautiful when you feel beautiful" this is one of the
-              many quotes I live by. I believe my work is to help women by
-              enhancing their individual unique beauty
+              “You look beautiful when you feel beautiful”. This is one of the
+              many quotes I live by. Therefore, expressing my love for art
+              through makeup is one of my many joys.
             </p>
             <p id="team-member" className="more-info-text">
-              I have always been passionate about art and i’ve found that the
-              best way I am able to express that is through makeup. Every time I
-              hand a client the mirror, it never fails that their face lights up
-              with joy. It’s very important that everyone leaves feeling
-              comfortable and confident.
+              Most importantly, my work aims to serve you by enhancing your
+              unique beauty. I would love for you to leave my studio feeling
+              extra confident!
             </p>
             <p id="team-member" className="more-info-text">
-              I highly appreciate your interest in booking our services. I hope
-              you love what you see & I can’t wait to meet you all!
+              I appreciate your interest in booking our services, so I hope you
+              love what you see and I can’t wait to meet you!
             </p>
             <p id="team-member" className="more-info-text">
               With Love,

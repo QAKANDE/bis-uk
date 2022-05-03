@@ -25,7 +25,7 @@ class Footer extends Component {
         <div className="container">
           <div className="d-flex justify-content-center">
             <div className="widget">
-              <h3 className="widget-title">Social Media</h3>
+              <h3 className="widget-title">Contact Us</h3>
               <div className="social-links">
                 {/* <a href="#" className="mx-2">
                   <i className="fa fa-twitter" />

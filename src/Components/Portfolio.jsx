@@ -202,7 +202,8 @@ class Portfolio extends Component {
     return (
       <Container className="mb-5 mt-5">
         {/* <h2 className="section-title">Previous work</h2> */}
-        <h3 className="text-center mb-5 section-title">FULL GLAM</h3>
+        <h3 className="text-center  section-title">FULL GLAM</h3>
+
         <div className="row">
           {this.state.fullGlamFeatures.map((feature, index) => {
             return (

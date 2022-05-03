@@ -7,6 +7,15 @@
   padding-bottom: 0.5rem;
 }
 
+#coming-soon-wrapper {
+  height: 43vh;
+}
+
+#coming-text {
+  text-align: center;
+  padding-top: 10rem;
+}
+
 @media screen and (max-width: 500px) {
   #drop-down-form {
     width: 50%;
