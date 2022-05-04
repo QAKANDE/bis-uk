@@ -38,7 +38,7 @@ class Carou extends Component {
                   }}
                 />
                 <Carousel.Caption>
-                  <h3 style={{ color: "#aea9ad" }}>{im.serviceName}</h3>
+                  <h3>{im.serviceName}</h3>
                 </Carousel.Caption>
               </Carousel.Item>
             );
