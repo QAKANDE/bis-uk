@@ -50,7 +50,7 @@ class Footer extends Component {
                   </i>
                 </a>
                 <a
-                  href="bpolufade@icloud.com"
+                  href="mailto:bpolufade@icloud.com"
                   target="_blank"
                   rel="noreferrer"
                   className="mx-2"
