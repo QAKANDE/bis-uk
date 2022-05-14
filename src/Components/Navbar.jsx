@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../css/Navbar.css";
 import logo from "../Assets/bisbeauty-white-logo2.png";
-import openIcon from "../Assets/menu.png";
+import openIcon from "../Assets/hamburg.png";
 import closeIcon from "../Assets/cancel.png";
 
 class Navbar extends Component {

@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import iconMapSmall from "../Assets/Images/icon-map-small.png";
-import iconPhoneSmall from "../Assets/Images/icon-phone-small.png";
-import iconEnvelopeSmall from "../Assets/Images/icon-envelope-small.png";
-import { Container, Form, Alert } from "react-bootstrap";
+import tiktok from "../Assets/tik-tok.png";
+import instagram from "../Assets/instagram.png";
+import mail from "../Assets/mail.png";
 
 class Footer extends Component {
   state = {
@@ -33,24 +32,33 @@ class Footer extends Component {
                 <a
                   href="https://instagram.com/bisbeautyuk?utm_medium=copy_link"
                   target="_blank"
+                  rel="noreferrer"
                   className="mx-2"
                 >
-                  <i class="fa fa-instagram"></i>
-                </a>
-                {/* <a
-                  href="https://instagram.com/bisbeautyuk?utm_medium=copy_link"
-                  target_type="blank"
-                  className="mx-2"
-                >
-                  <i class="fa fa-tiktok"></i>
+                  <i class="fa fa-indstagram">
+                    <img src={instagram} id="icons-img" />
+                  </i>
                 </a>
                 <a
-                  href="https://instagram.com/bisbeautyuk?utm_medium=copy_link"
-                  target_type="blank"
+                  href="https://www.tiktok.com/@bisbeautyuk"
+                  target="_blank"
+                  rel="noreferrer"
                   className="mx-2"
                 >
-                  <i className="fa fa-twitter" />
-                </a> */}
+                  <i class="fa fa-tiktok">
+                    <img src={tiktok} id="icons-img" />
+                  </i>
+                </a>
+                <a
+                  href="bpolufade@icloud.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mx-2"
+                >
+                  <i className="fa fa-twitteddr">
+                    <img src={mail} id="icons-img" />
+                  </i>
+                </a>
               </div>
             </div>
           </div>
