@@ -55,7 +55,7 @@ class Navbar extends Component {
                       </Link>
                     </li>
                     <li>
-                      <Link to="/team" className="navbar-links">
+                      <Link to="/coming-soon" className="navbar-links">
                         Make up products
                       </Link>
                     </li>

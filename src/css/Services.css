@@ -5,6 +5,9 @@
 .service-image:hover {
   opacity: 1;
 }
+.more-info-text {
+  text-align: center;
+}
 
 @media screen and (max-width: 500px) {
   .feature-image {
