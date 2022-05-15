@@ -202,15 +202,6 @@ class Portfolio extends Component {
     return (
       <Container className="mb-5 mt-5">
         <h3 className="text-center mb-5 section-title">FULL GLAM</h3>
-        <div className="row">
-          {this.state.fullGlamFeatures.map((feature, index) => {
-            return (
-              <div className="col-md-4" key={index}>
-                <p className="feature-wrapper">{feature.text}</p>
-              </div>
-            );
-          })}
-        </div>
         <div className="row mt-5">
           {this.state.fullGlamImages.map((picture, index) => {
             return (
@@ -242,15 +233,7 @@ class Portfolio extends Component {
         </div>
 
         <h3 className="text-center mb-5 section-title">NATURAL GLAM</h3>
-        <div className="row">
-          {this.state.naturalGlamFeatures.map((feature, index) => {
-            return (
-              <div className="col-md-4" key={index}>
-                <p className="feature-wrapper">{feature.text}</p>
-              </div>
-            );
-          })}
-        </div>
+
         <div className="row mt-5">
           {this.state.naturalGlamImages.map((picture, index) => {
             return (
@@ -283,15 +266,6 @@ class Portfolio extends Component {
         </div>
 
         <h3 className="text-center mb-5 section-title">SOFT GLAM</h3>
-        <div className="row">
-          {this.state.softGlamFeatures.map((feature, index) => {
-            return (
-              <div className="col-md-4" key={index}>
-                <p className="feature-wrapper">{feature.text}</p>
-              </div>
-            );
-          })}
-        </div>
         <div className="row  mt-5">
           {this.state.softGlamImages.map((picture, index) => {
             return (

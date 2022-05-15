@@ -19,10 +19,14 @@ class Team extends Component {
           <Container>
             <p id="team-member" className="more-info-text">
               “You look beautiful when you feel beautiful”. This is one of the
-              many quotes I live by. Therefore, expressing my love for art
-              through makeup is one of my many joys.
+              quotes I live by. Therefore, expressing my love for art through
+              makeup is one of my many joys.Most importantly, my work aims to
+              serve you by enhancing your unique beauty. I would love for you to
+              leave my studio feeling extra confident! I appreciate your
+              interest in booking our services, so I hope you love what you see
+              and I can’t wait to meet you!
             </p>
-            <p id="team-member" className="more-info-text">
+            {/* <p id="team-member" className="more-info-text">
               Most importantly, my work aims to serve you by enhancing your
               unique beauty. I would love for you to leave my studio feeling
               extra confident!
@@ -30,7 +34,7 @@ class Team extends Component {
             <p id="team-member" className="more-info-text">
               I appreciate your interest in booking our services, so I hope you
               love what you see and I can’t wait to meet you!
-            </p>
+            </p> */}
             <p id="team-member" className="more-info-text">
               With Love,
             </p>

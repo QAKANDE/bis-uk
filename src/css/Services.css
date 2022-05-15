@@ -8,6 +8,10 @@
 .more-info-text {
   text-align: center;
 }
+.more-info-text > span {
+  font-weight: 900;
+  font-size: 15px;
+}
 
 #icons-img {
   width: 60%;

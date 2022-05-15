@@ -27,7 +27,7 @@ class Navbar extends Component {
                 </div>
               </div>
               <div className="col-md-8 clearfix ">
-                <div className="d-flex flex-row shop-menu clearfix pull-right">
+                <div className="d-flex flex-row shop-menu clearfix">
                   <ul>
                     <li>
                       <Link to="/" className="navbar-links">
@@ -56,7 +56,7 @@ class Navbar extends Component {
                     </li>
                     <li>
                       <Link to="/coming-soon" className="navbar-links">
-                        Make up products
+                        Products coming soon
                       </Link>
                     </li>
                   </ul>

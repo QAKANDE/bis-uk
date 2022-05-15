@@ -5,11 +5,7 @@ import mail from "../Assets/mail.png";
 
 class Footer extends Component {
   state = {
-    messageDetails: {
-      name: "",
-      email: "",
-      customerNumber: "",
-    },
+    currentYear: new Date().getFullYear(),
   };
 
   updateSendMessageDetails = (e) => {
@@ -141,8 +137,8 @@ class Footer extends Component {
           </div>
           <div className="colophon">
             <p>
-              Copyright 2022 BisBeautyUK. Designed by Quadri Akande. All rights
-              reserved.
+              Copyright {this.state.currentYear} BisBeautyUK. Designed by Quadri
+              Akande. All rights reserved.
             </p>
           </div>
         </div>
